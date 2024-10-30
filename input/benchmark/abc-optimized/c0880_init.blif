@@ -1,0 +1,797 @@
+.model c0880
+.inputs G1 G2 G3 G4 G5 G6 G7 G8 G9 G10 G11 G12 G13 G14 G15 G16 G17 G18 G19 G20 G21 G22 G23 G24 G25 G26 G27 G28 G29 G30 G31 G32 G33 G34 G35 G36 G37 G38 G39 G40 G41 G42 G43 G44 G45 G46 G47 G48 G49 G50 G51 G52 G53 G54 G55 G56 G57 G58 G59 G60 
+.outputs G855 G856 G857 G858 G859 G860 G861 G862 G863 G864 G865 G866 G867 G868 G869 G870 G871 G872 G873 G874 G875 G876 G877 G878 G879 G880 
+.names G2 new_n87
+# INV_X1
+0 1
+
+.names G4 new_n88
+# INV_X1
+0 1
+
+.names G6 new_n89
+# INV_X1
+0 1
+
+.names G7 new_n90
+# INV_X1
+0 1
+
+.names G8 new_n91
+# INV_X1
+0 1
+
+.names G9 new_n92
+# INV_X1
+0 1
+
+.names G10 new_n93
+# INV_X1
+0 1
+
+.names G11 new_n94
+# INV_X1
+0 1
+
+.names G12 new_n95
+# INV_X1
+0 1
+
+.names G16 new_n96
+# INV_X1
+0 1
+
+.names G17 new_n97
+# INV_X1
+0 1
+
+.names G25 new_n98
+# INV_X1
+0 1
+
+.names G26 new_n99
+# INV_X1
+0 1
+
+.names G27 new_n100
+# INV_X1
+0 1
+
+.names G32 new_n101
+# INV_X1
+0 1
+
+.names G34 new_n102
+# INV_X1
+0 1
+
+.names G35 new_n103
+# INV_X1
+0 1
+
+.names G36 new_n104
+# INV_X1
+0 1
+
+.names G37 new_n105
+# INV_X1
+0 1
+
+.names G38 new_n106
+# INV_X1
+0 1
+
+.names G39 new_n107
+# INV_X1
+0 1
+
+.names G41 new_n108
+# INV_X1
+0 1
+
+.names G42 new_n109
+# INV_X1
+0 1
+
+.names G43 new_n110
+# INV_X1
+0 1
+
+.names G44 new_n111
+# INV_X1
+0 1
+
+.names G45 new_n112
+# INV_X1
+0 1
+
+.names G46 new_n113
+# INV_X1
+0 1
+
+.names G47 new_n114
+# INV_X1
+0 1
+
+.names G48 new_n115
+# INV_X1
+0 1
+
+.names G50 new_n116
+# INV_X1
+0 1
+
+.names G51 new_n117
+# INV_X1
+0 1
+
+.names G52 new_n118
+# INV_X1
+0 1
+
+.names G6 G16 G8 G855
+# NAND3_X1
+111 0
+
+.names G6 G7 G17 G856
+# NAND3_X1
+111 0
+
+.names new_n89 new_n90 new_n91 new_n121
+# NOR3_X1
+000 1
+
+.names new_n121 G857
+# INV_X1
+0 1
+
+.names G18 G19 G858
+# NAND2_X1
+11 0
+
+.names G1 G2 new_n124
+# NAND2_X1
+11 0
+
+.names G1 G2 G3 G4 G859
+# NAND4_X1
+1111 0
+
+.names G3 G4 G1 G5 new_n126
+# NAND4_X1
+1111 0
+
+.names new_n121 new_n126 G860
+# NOR2_X1
+00 1
+
+.names new_n94 new_n96 new_n97 G861
+# NOR3_X1
+000 1
+
+.names new_n90 new_n94 new_n97 G862
+# NOR3_X1
+000 1
+
+.names new_n90 new_n94 new_n91 G863
+# NOR3_X1
+000 1
+
+.names G23 G20 G21 G864
+# OAI21_X1
+-00 1
+0-- 1
+
+.names G857 new_n126 G865
+# NOR2_X1
+00 1
+
+.names G1 G5 G9 G866
+# NAND3_X1
+111 0
+
+.names G1 G2 G3 G10 new_n134
+# NAND4_X1
+1111 0
+
+.names new_n89 new_n95 new_n134 G867
+# OR3_X1
+000 0
+
+.names new_n94 new_n95 new_n134 new_n136
+# NOR3_X1
+000 1
+
+.names G15 new_n136 G868
+# NAND2_X1
+11 0
+
+.names G22 G20 G21 G869
+# OAI21_X1
+-00 1
+0-- 1
+
+.names new_n99 G27 G26 new_n100 new_n139
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n101 G33 new_n140
+# XOR2_X1
+10 1
+01 1
+
+.names new_n139 new_n140 new_n141
+# XNOR2_X1
+11 1
+00 1
+
+.names G30 G31 new_n142
+# XNOR2_X1
+11 1
+00 1
+
+.names G28 G29 new_n143
+# XOR2_X1
+10 1
+01 1
+
+.names G24 new_n98 new_n144
+# XOR2_X1
+10 1
+01 1
+
+.names new_n143 new_n144 new_n145
+# XOR2_X1
+10 1
+01 1
+
+.names new_n142 new_n145 new_n146
+# XNOR2_X1
+11 1
+00 1
+
+.names new_n141 new_n146 G870
+# XOR2_X1
+10 1
+01 1
+
+.names new_n110 G44 G43 new_n111 new_n148
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n101 G49 new_n149
+# XOR2_X1
+10 1
+01 1
+
+.names new_n148 new_n149 new_n150
+# XNOR2_X1
+11 1
+00 1
+
+.names G47 G48 new_n114 new_n115 new_n151
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n112 G46 G45 new_n113 new_n152
+# OAI22_X1
+--00 1
+00-- 1
+
+.names G41 new_n109 new_n108 G42 new_n153
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n152 new_n153 new_n154
+# XOR2_X1
+10 1
+01 1
+
+.names new_n151 new_n154 new_n155
+# XNOR2_X1
+11 1
+00 1
+
+.names new_n150 new_n155 G871
+# XOR2_X1
+10 1
+01 1
+
+.names G11 G40 new_n157
+# AND2_X1
+11 1
+
+.names new_n157 new_n88 new_n91 G4 G8 new_n158
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n94 new_n96 new_n91 new_n159
+# NOR3_X1
+000 1
+
+.names new_n88 new_n92 new_n124 new_n159 new_n160
+# OR4_X1
+0000 0
+
+.names new_n160 G866 new_n158 new_n161
+# OAI21_X1
+-00 1
+0-- 1
+
+.names G866 new_n157 new_n162
+# OR2_X1
+00 0
+
+.names G1 new_n88 new_n162 new_n163
+# OAI21_X1
+-00 1
+0-- 1
+
+.names new_n163 new_n164
+# INV_X1
+0 1
+
+.names new_n89 new_n96 new_n97 G866 new_n165
+# OR4_X1
+0000 0
+
+.names new_n93 G60 new_n165 new_n166
+# OR3_X1
+000 0
+
+.names new_n166 new_n107 new_n164 new_n167
+# OAI21_X1
+-00 1
+0-- 1
+
+.names new_n167 G31 new_n161 new_n168
+# AOI21_X1
+0-0 1
+00- 1
+
+.names new_n115 new_n168 new_n169
+# XOR2_X1
+10 1
+01 1
+
+.names G58 new_n169 new_n170
+# NAND2_X1
+11 0
+
+.names G51 new_n170 G58 new_n169 new_n171
+# OAI211_X1
+11-1 0
+111- 0
+
+.names new_n171 new_n172
+# INV_X1
+0 1
+
+.names G54 G48 G53 new_n173
+# AOI21_X1
+0-0 1
+00- 1
+
+.names G8 G13 G14 new_n136 new_n174
+# NAND4_X1
+1111 0
+
+.names new_n174 new_n175
+# INV_X1
+0 1
+
+.names G30 G50 G55 G59 new_n176
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n176 new_n115 new_n174 new_n168 new_n173 new_n177
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n177 new_n172 G52 new_n169 G872
+# AOI211_X1
+00-0 1
+000- 1
+
+.names new_n166 new_n103 new_n164 new_n179
+# OAI21_X1
+-00 1
+0-- 1
+
+.names new_n179 G28 new_n161 new_n180
+# AOI21_X1
+0-0 1
+00- 1
+
+.names new_n112 new_n180 new_n181
+# XOR2_X1
+10 1
+01 1
+
+.names new_n166 new_n104 new_n164 new_n182
+# OAI21_X1
+-00 1
+0-- 1
+
+.names new_n182 G29 new_n161 new_n183
+# AOI21_X1
+0-0 1
+00- 1
+
+.names new_n113 new_n183 new_n184
+# XOR2_X1
+10 1
+01 1
+
+.names new_n166 new_n105 new_n164 new_n185
+# OAI21_X1
+-00 1
+0-- 1
+
+.names new_n185 G30 new_n161 new_n186
+# AOI21_X1
+0-0 1
+00- 1
+
+.names new_n114 new_n186 new_n187
+# XOR2_X1
+10 1
+01 1
+
+.names new_n170 new_n115 new_n168 new_n188
+# OAI21_X1
+-00 1
+0-- 1
+
+.names new_n187 new_n188 new_n189
+# NAND2_X1
+11 0
+
+.names new_n189 new_n114 new_n186 new_n190
+# OAI21_X1
+-00 1
+0-- 1
+
+.names new_n184 new_n190 new_n191
+# NAND2_X1
+11 0
+
+.names new_n191 new_n113 new_n183 new_n192
+# OAI21_X1
+-00 1
+0-- 1
+
+.names new_n181 new_n192 new_n193
+# NAND2_X1
+11 0
+
+.names G51 new_n193 new_n181 new_n192 new_n194
+# OAI211_X1
+11-1 0
+111- 0
+
+.names new_n194 new_n195
+# INV_X1
+0 1
+
+.names G54 G45 G53 new_n196
+# AOI21_X1
+0-0 1
+00- 1
+
+.names new_n112 new_n174 new_n100 new_n116 new_n180 new_n196 new_n197
+# OAI222_X1
+----00 1
+--00-- 1
+00---- 1
+
+.names new_n197 new_n195 G52 new_n181 G873
+# AOI211_X1
+00-0 1
+000- 1
+
+.names G51 new_n191 new_n184 new_n190 new_n199
+# OAI211_X1
+11-1 0
+111- 0
+
+.names new_n199 new_n200
+# INV_X1
+0 1
+
+.names G54 G46 G53 new_n201
+# AOI21_X1
+0-0 1
+00- 1
+
+.names G28 G50 G55 G56 new_n202
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n202 new_n113 new_n174 new_n183 new_n201 new_n203
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n203 new_n200 G52 new_n184 G874
+# AOI211_X1
+00-0 1
+000- 1
+
+.names G51 new_n189 new_n187 new_n188 new_n205
+# OAI211_X1
+11-1 0
+111- 0
+
+.names new_n205 new_n206
+# INV_X1
+0 1
+
+.names G54 G47 G53 new_n207
+# AOI21_X1
+0-0 1
+00- 1
+
+.names G29 G50 G55 G57 new_n208
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n208 new_n114 new_n174 new_n186 new_n207 new_n209
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n209 new_n206 G52 new_n187 G875
+# AOI211_X1
+00-0 1
+000- 1
+
+.names new_n93 new_n162 new_n211
+# OR2_X1
+00 0
+
+.names new_n88 G60 new_n165 new_n212
+# OR3_X1
+000 0
+
+.names new_n212 new_n87 new_n102 new_n103 new_n211 new_n213
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n213 G24 new_n161 new_n214
+# AOI21_X1
+0-0 1
+00- 1
+
+.names new_n108 new_n214 new_n215
+# NOR2_X1
+00 1
+
+.names new_n215 new_n108 new_n214 new_n216
+# AOI21_X1
+0-0 1
+00- 1
+
+.names new_n216 new_n217
+# INV_X1
+0 1
+
+.names new_n212 new_n92 new_n102 new_n104 new_n211 new_n218
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n218 G25 new_n161 new_n219
+# AOI21_X1
+0-0 1
+00- 1
+
+.names new_n109 new_n219 new_n220
+# NOR2_X1
+00 1
+
+.names new_n212 new_n88 new_n102 new_n105 new_n211 new_n221
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n221 G26 new_n161 new_n222
+# AOI21_X1
+0-0 1
+00- 1
+
+.names new_n222 new_n223
+# INV_X1
+0 1
+
+.names new_n110 new_n222 new_n224
+# NOR2_X1
+00 1
+
+.names new_n224 new_n225
+# INV_X1
+0 1
+
+.names new_n212 new_n102 new_n106 new_n107 new_n211 new_n226
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n226 G27 new_n161 new_n227
+# AOI21_X1
+0-0 1
+00- 1
+
+.names new_n111 new_n227 new_n228
+# NOR2_X1
+00 1
+
+.names new_n193 new_n112 new_n180 new_n229
+# OAI21_X1
+-00 1
+0-- 1
+
+.names new_n228 new_n111 new_n227 new_n230
+# AOI21_X1
+0-0 1
+00- 1
+
+.names new_n228 new_n229 new_n230 new_n231
+# AOI21_X1
+0-0 1
+00- 1
+
+.names new_n231 new_n110 new_n222 new_n232
+# AOI21_X1
+0-0 1
+00- 1
+
+.names new_n224 new_n232 new_n233
+# NOR2_X1
+00 1
+
+.names new_n220 new_n109 new_n219 new_n234
+# AOI21_X1
+0-0 1
+00- 1
+
+.names new_n234 new_n235
+# INV_X1
+0 1
+
+.names new_n233 new_n235 new_n236
+# NOR2_X1
+00 1
+
+.names new_n220 new_n236 new_n237
+# NOR2_X1
+00 1
+
+.names new_n217 new_n237 new_n238
+# NOR2_X1
+00 1
+
+.names new_n215 new_n238 G876
+# NOR2_X1
+00 1
+
+.names new_n229 new_n230 new_n240
+# NOR2_X1
+00 1
+
+.names new_n117 new_n240 new_n229 new_n230 new_n241
+# AOI211_X1
+00-0 1
+000- 1
+
+.names G54 G44 G53 new_n242
+# AOI21_X1
+0-0 1
+00- 1
+
+.names new_n111 new_n174 new_n99 new_n116 new_n227 new_n242 new_n243
+# OAI222_X1
+----00 1
+--00-- 1
+00---- 1
+
+.names new_n243 new_n241 G52 new_n230 G877
+# AOI211_X1
+00-0 1
+000- 1
+
+.names new_n117 new_n238 new_n217 new_n237 new_n245
+# AOI211_X1
+00-0 1
+000- 1
+
+.names G54 G41 G53 new_n246
+# AOI21_X1
+0-0 1
+00- 1
+
+.names G41 new_n175 G50 G60 new_n247
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n247 new_n214 new_n246 new_n248
+# OAI21_X1
+-00 1
+0-- 1
+
+.names new_n248 new_n245 G52 new_n216 G878
+# AOI211_X1
+00-0 1
+000- 1
+
+.names new_n117 new_n236 new_n233 new_n235 new_n250
+# AOI211_X1
+00-0 1
+000- 1
+
+.names G54 G42 G53 new_n251
+# AOI21_X1
+0-0 1
+00- 1
+
+.names G42 new_n175 G24 G50 new_n252
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n252 new_n219 new_n251 new_n253
+# OAI21_X1
+-00 1
+0-- 1
+
+.names new_n253 new_n250 G52 new_n234 G879
+# AOI211_X1
+00-0 1
+000- 1
+
+.names G43 new_n223 G53 new_n225 new_n255
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n255 new_n117 new_n231 new_n256
+# OAI21_X1
+-00 1
+0-- 1
+
+.names new_n118 new_n225 new_n117 new_n232 new_n257
+# OAI211_X1
+11-1 0
+111- 0
+
+.names new_n110 new_n174 new_n98 new_n116 new_n258
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n258 G54 new_n223 new_n256 new_n257 G880
+# AOI221_X1
+-11-- 0
+1---- 0
+---11 0
+
+.end

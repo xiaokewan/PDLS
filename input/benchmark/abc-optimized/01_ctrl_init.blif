@@ -1,0 +1,340 @@
+.model epfl-original/random_control/1_ctrl
+.inputs opcode[0] opcode[1] opcode[2] opcode[3] opcode[4] op_ext[0] op_ext[1] 
+.outputs sel_reg_dst[0] sel_reg_dst[1] sel_alu_opB[0] sel_alu_opB[1] alu_op[0] alu_op[1] alu_op[2] alu_op_ext[0] alu_op_ext[1] alu_op_ext[2] alu_op_ext[3] halt reg_write sel_pc_opA sel_pc_opB beqz bnez bgez bltz jump Cin invA invB sign mem_write sel_wb 
+.names opcode[2] new_n34
+# INV_X1
+0 1
+
+.names opcode[4] new_n35
+# INV_X1
+0 1
+
+.names opcode[3] new_n36
+# INV_X1
+0 1
+
+.names opcode[1] new_n36 opcode[4] new_n37
+# OAI21_X1
+-00 1
+0-- 1
+
+.names new_n34 new_n35 new_n37 new_n38
+# AOI21_X1
+0-0 1
+00- 1
+
+.names opcode[1] new_n38 opcode[3] new_n35 new_n39
+# OAI211_X1
+11-1 0
+111- 0
+
+.names opcode[3] new_n35 new_n40
+# NOR2_X1
+00 1
+
+.names new_n34 new_n40 new_n41
+# NOR2_X1
+00 1
+
+.names new_n41 new_n42
+# INV_X1
+0 1
+
+.names opcode[1] new_n43
+# INV_X1
+0 1
+
+.names opcode[0] new_n44
+# INV_X1
+0 1
+
+.names new_n36 new_n35 new_n45
+# NOR2_X1
+00 1
+
+.names new_n44 new_n45 new_n46
+# NAND2_X1
+11 0
+
+.names new_n43 new_n46 new_n47
+# NAND2_X1
+11 0
+
+.names new_n47 new_n43 new_n40 new_n48
+# OAI21_X1
+-00 1
+0-- 1
+
+.names new_n48 new_n49
+# INV_X1
+0 1
+
+.names opcode[3] opcode[4] new_n50
+# NOR2_X1
+00 1
+
+.names opcode[1] new_n45 new_n50 new_n51
+# NOR3_X1
+000 1
+
+.names opcode[2] new_n51 new_n52
+# OR2_X1
+00 0
+
+.names new_n42 new_n49 new_n52 new_n53
+# OAI21_X1
+-00 1
+0-- 1
+
+.names new_n53 sel_alu_opB[1]
+# INV_X1
+0 1
+
+.names new_n39 new_n35 sel_alu_opB[1] sel_reg_dst[0]
+# OAI21_X1
+-00 1
+0-- 1
+
+.names new_n34 new_n48 new_n56
+# NAND2_X1
+11 0
+
+.names new_n50 new_n57
+# INV_X1
+0 1
+
+.names new_n43 new_n57 new_n58
+# NOR2_X1
+00 1
+
+.names new_n56 new_n34 new_n58 new_n59
+# OAI21_X1
+-00 1
+0-- 1
+
+.names new_n59 sel_reg_dst[1]
+# INV_X1
+0 1
+
+.names opcode[0] new_n45 new_n35 new_n61
+# NOR3_X1
+000 1
+
+.names new_n34 new_n47 new_n37 new_n61 new_n62
+# OAI211_X1
+11-1 0
+111- 0
+
+.names new_n62 sel_alu_opB[0]
+# INV_X1
+0 1
+
+.names opcode[0] opcode[1] opcode[3] new_n64
+# NAND3_X1
+111 0
+
+.names op_ext[0] new_n65
+# INV_X1
+0 1
+
+.names new_n64 opcode[4] new_n65 new_n66
+# AOI21_X1
+0-0 1
+00- 1
+
+.names opcode[2] new_n66 new_n67
+# NOR2_X1
+00 1
+
+.names opcode[3] new_n35 op_ext[1] new_n68
+# OAI21_X1
+-00 1
+0-- 1
+
+.names new_n34 new_n68 new_n69
+# AND2_X1
+11 1
+
+.names new_n67 new_n69 new_n70
+# NOR2_X1
+00 1
+
+.names new_n43 new_n65 new_n46 new_n71
+# NOR3_X1
+000 1
+
+.names new_n70 new_n71 new_n72
+# NOR2_X1
+00 1
+
+.names opcode[0] new_n40 new_n73
+# NAND2_X1
+11 0
+
+.names new_n72 opcode[2] new_n73 alu_op[0]
+# AOI21_X1
+0-0 1
+00- 1
+
+.names new_n43 new_n41 new_n69 alu_op[1]
+# NOR3_X1
+000 1
+
+.names new_n36 new_n35 opcode[0] opcode[1] new_n76
+# AOI211_X1
+00-0 1
+000- 1
+
+.names new_n34 new_n40 new_n35 opcode[2] new_n50 new_n76 alu_op[2]
+# OAI33_X1
+---000 1
+000--- 1
+
+.names opcode[2] new_n46 sel_reg_dst[0] new_n78
+# NAND3_X1
+111 0
+
+.names new_n78 new_n36 new_n59 alu_op_ext[0]
+# OAI21_X1
+-00 1
+0-- 1
+
+.names new_n61 new_n80
+# INV_X1
+0 1
+
+.names new_n39 new_n52 new_n80 alu_op_ext[1]
+# OAI21_X1
+-00 1
+0-- 1
+
+.names new_n43 new_n36 new_n73 new_n82
+# AOI21_X1
+0-0 1
+00- 1
+
+.names new_n42 new_n52 new_n82 new_n83
+# OAI21_X1
+-00 1
+0-- 1
+
+.names new_n83 alu_op_ext[3]
+# INV_X1
+0 1
+
+.names new_n36 new_n73 new_n85
+# NAND2_X1
+11 0
+
+.names new_n34 new_n49 new_n85 new_n86
+# OAI21_X1
+-00 1
+0-- 1
+
+.names alu_op_ext[3] new_n59 new_n86 alu_op_ext[2]
+# AOI21_X1
+0-0 1
+00- 1
+
+.names opcode[2] opcode[1] new_n73 new_n88
+# AOI21_X1
+0-0 1
+00- 1
+
+.names new_n44 new_n50 new_n88 halt
+# AND3_X1
+111 1
+
+.names new_n38 new_n90
+# INV_X1
+0 1
+
+.names new_n90 new_n86 reg_write
+# NAND2_X1
+11 0
+
+.names new_n34 new_n57 jump
+# NOR2_X1
+00 1
+
+.names jump new_n93
+# INV_X1
+0 1
+
+.names new_n44 new_n93 sel_pc_opA
+# NOR2_X1
+00 1
+
+.names opcode[0] new_n93 sel_pc_opB
+# NOR2_X1
+00 1
+
+.names opcode[0] new_n45 new_n36 new_n96
+# NOR3_X1
+000 1
+
+.names new_n96 new_n97
+# INV_X1
+0 1
+
+.names new_n34 new_n97 opcode[1] new_n96 beqz
+# AOI211_X1
+00-0 1
+000- 1
+
+.names new_n36 opcode[4] new_n44 opcode[1] new_n99
+# NOR4_X1
+0000 1
+
+.names opcode[2] new_n99 bnez
+# AND2_X1
+11 1
+
+.names new_n64 alu_op[2] bgez
+# NOR2_X1
+00 1
+
+.names new_n43 new_n97 new_n34 bltz
+# NOR3_X1
+000 1
+
+.names new_n34 new_n76 new_n103
+# NOR2_X1
+00 1
+
+.names opcode[2] new_n66 new_n99 new_n104
+# NOR3_X1
+000 1
+
+.names new_n103 new_n104 Cin
+# NOR2_X1
+00 1
+
+.names new_n70 new_n104 invA
+# NOR2_X1
+00 1
+
+.names new_n67 new_n69 new_n103 invB
+# NOR3_X1
+000 1
+
+.names new_n88 opcode[1] new_n61 new_n109
+# OAI21_X1
+-00 1
+0-- 1
+
+.names new_n109 mem_write
+# INV_X1
+0 1
+
+.names new_n56 new_n73 sel_wb
+# NOR2_X1
+00 1
+
+.names n112
+# _const1_
+ 1
+
+.names n112 sign
+1 1
+.end

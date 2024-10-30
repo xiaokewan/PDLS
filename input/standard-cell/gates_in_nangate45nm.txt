@@ -1,0 +1,65 @@
+ABC command line: "r input/standard-cell/nangate_45nm_typ.lib; print_lib".
+
+Library "NangateOpenCellLibrary" from "input/standard-cell/nangate_45nm_typ.lib" has 90 cells (35 skipped: 21 seq; 6 tri-state; 8 no func; 9 dont_use).  Time =     0.10 sec
+Warning: Detected 2 multi-output gates (for example, "FA_X1").
+Library "NangateOpenCellLibrary" has 90 cells in 30 classes.  Delay estimate is based on slew 17.19 ps and gain 100.00.
+Class   0 : Cells =  9   Ins = 1  Outs = 1  A                                 F = (a)
+    1   : CLKBUF_X1   1   A =    0.80  L =   11.21  D =  29.2 ps  LD =   1.9 ps  PD =  27.3 ps    C =  0.7 ff  Cm =   61 ff    Sm =  0.0 ps 
+Class   1 : Cells =  6   Ins = 1  Outs = 1  !A                                F = (!a)
+    1   : INV_X1      1   A =    0.53  L =   14.35  D =  10.7 ps  LD =   3.1 ps  PD =   7.6 ps    C =  1.6 ff  Cm =   61 ff    Sm =  0.0 ps 
+Class   2 : Cells =  3   Ins = 2  Outs = 1  (A1 | A2)                         F = !(!b*!a)
+    1   : OR2_X1      1   A =    1.06  L =   22.69  D =  35.7 ps  LD =   1.8 ps  PD =  33.9 ps    C =  0.9 ff  Cm =   61 ff    Sm =  0.0 ps 
+Class   3 : Cells =  3   Ins = 2  Outs = 1  (A1 & A2)                         F = (b*a)
+    1   : AND2_X1     1   A =    1.06  L =   25.07  D =  30.8 ps  LD =   1.8 ps  PD =  29.1 ps    C =  0.9 ff  Cm =   61 ff    Sm =  0.0 ps 
+Class   4 : Cells =  3   Ins = 2  Outs = 1  !(A1 & A2)                        F = !(b*a)
+    1   : NAND2_X1    1   A =    0.80  L =   17.39  D =  16.2 ps  LD =   3.6 ps  PD =  12.6 ps    C =  1.6 ff  Cm =   59 ff    Sm =  0.0 ps 
+Class   5 : Cells =  3   Ins = 2  Outs = 1  !(A1 | A2)                        F = (!b*!a)
+    1   : NOR2_X1     1   A =    0.80  L =   21.20  D =  19.1 ps  LD =   5.2 ps  PD =  13.9 ps    C =  1.6 ff  Cm =   27 ff    Sm =  0.0 ps 
+Class   6 : Cells =  2   Ins = 2  Outs = 1  (A ^ B)                           F = (b+a)
+    1   : XOR2_X1     1   A =    1.60  L =   36.16  D =  53.5 ps  LD =   7.8 ps  PD =  45.7 ps    C =  2.3 ff  Cm =   25 ff    Sm =  0.0 ps 
+Class   7 : Cells =  2   Ins = 2  Outs = 1  !(A ^ B)                          F = !(b+a)
+    1   : XNOR2_X1    1   A =    1.60  L =   36.44  D =  44.4 ps  LD =   7.4 ps  PD =  36.9 ps    C =  2.3 ff  Cm =   26 ff    Sm =  0.0 ps 
+Class   8 : Cells =  1   Ins = 2  Outs = 2  (A & B)                           F = (b*a)
+    1   : HA_X1       1   A =    2.66  L =   61.23  
+Class   9 : Cells =  3   Ins = 3  Outs = 1  ((A1 | A2) | A3)                  F = !(!c*!b*!a)
+    1   : OR3_X1      1   A =    1.33  L =   24.41  D =  49.4 ps  LD =   1.9 ps  PD =  47.4 ps    C =  0.9 ff  Cm =   61 ff    Sm =  0.0 ps 
+Class  10 : Cells =  3   Ins = 3  Outs = 1  ((A1 & A2) & A3)                  F = (c*b*a)
+    1   : AND3_X1     1   A =    1.33  L =   26.48  D =  37.2 ps  LD =   1.8 ps  PD =  35.4 ps    C =  0.9 ff  Cm =   60 ff    Sm =  0.0 ps 
+Class  11 : Cells =  2   Ins = 3  Outs = 1  ((S & B) | (A & !S))              F = CA(a,b,c)
+    1   : MUX2_X1     1   A =    1.86  L =   35.93  D =  49.2 ps  LD =   2.6 ps  PD =  46.6 ps    C =  1.2 ff  Cm =   61 ff    Sm =  0.0 ps 
+Class  12 : Cells =  3   Ins = 3  Outs = 1  !(A | (B1 & B2))                  F = (!a*!(c*b))
+    1   : AOI21_X1    1   A =    1.06  L =   27.86  D =  24.9 ps  LD =   5.5 ps  PD =  19.5 ps    C =  1.6 ff  Cm =   25 ff    Sm =  0.0 ps 
+Class  13 : Cells =  3   Ins = 3  Outs = 1  !((A1 & A2) & A3)                 F = !(c*b*a)
+    1   : NAND3_X1    1   A =    1.06  L =   18.10  D =  21.0 ps  LD =   4.3 ps  PD =  16.7 ps    C =  1.6 ff  Cm =   58 ff    Sm =  0.0 ps 
+Class  14 : Cells =  3   Ins = 3  Outs = 1  !(A & (B1 | B2))                  F = !(a*!(!c*!b))
+    1   : OAI21_X1    1   A =    1.06  L =   22.62  D =  23.3 ps  LD =   5.0 ps  PD =  18.3 ps    C =  1.6 ff  Cm =   26 ff    Sm =  0.0 ps 
+Class  15 : Cells =  3   Ins = 3  Outs = 1  !((A1 | A2) | A3)                 F = (!c*!b*!a)
+    1   : NOR3_X1     1   A =    1.06  L =   26.83  D =  27.9 ps  LD =   7.5 ps  PD =  20.4 ps    C =  1.6 ff  Cm =   16 ff    Sm =  0.0 ps 
+Class  16 : Cells =  1   Ins = 3  Outs = 2  ((A & B) | (CI & (A | B)))        F = E8(a,b,c)
+    1   : FA_X1       1   A =    4.26  L =   75.76  
+Class  17 : Cells =  3   Ins = 4  Outs = 1  (((A1 | A2) | A3) | A4)           F = !(!d*!c*!b*!a)
+    1   : OR4_X1      1   A =    1.60  L =   26.73  D =  64.1 ps  LD =   2.0 ps  PD =  62.0 ps    C =  0.9 ff  Cm =   61 ff    Sm =  0.0 ps 
+Class  18 : Cells =  3   Ins = 4  Outs = 1  (((A1 & A2) & A3) & A4)           F = (d*c*b*a)
+    1   : AND4_X1     1   A =    1.60  L =   27.02  D =  44.4 ps  LD =   1.9 ps  PD =  42.5 ps    C =  0.9 ff  Cm =   60 ff    Sm =  0.0 ps 
+Class  19 : Cells =  3   Ins = 4  Outs = 1  !(((C1 | C2) & A) & B)            F = !(b*a*!(!d*!c))
+    1   : OAI211_X1   1   A =    1.33  L =   22.04  D =  27.6 ps  LD =   5.3 ps  PD =  22.4 ps    C =  1.6 ff  Cm =   26 ff    Sm =  0.0 ps
+Class  20 : Cells =  3   Ins = 4  Outs = 1  !(((C1 & C2) | B) | A)            F = (!b*!a*!(d*c))
+    1   : AOI211_X1   1   A =    1.33  L =   34.57  D =  35.6 ps  LD =   7.6 ps  PD =  28.1 ps    C =  1.6 ff  Cm =   14 ff    Sm =  0.0 ps 
+Class  21 : Cells =  3   Ins = 4  Outs = 1  !(((A1 | A2) | A3) | A4)          F = (!d*!c*!b*!a)
+    1   : NOR4_X1     1   A =    1.33  L =   32.60  D =  39.9 ps  LD =   9.7 ps  PD =  30.2 ps    C =  1.6 ff  Cm =   10 ff    Sm =  0.0 ps 
+Class  22 : Cells =  3   Ins = 4  Outs = 1  !(((A1 & A2) & A3) & A4)          F = !(d*c*b*a)
+    1   : NAND4_X1    1   A =    1.33  L =   18.13  D =  26.6 ps  LD =   4.9 ps  PD =  21.6 ps    C =  1.6 ff  Cm =   56 ff    Sm =  0.0 ps 
+Class  23 : Cells =  3   Ins = 4  Outs = 1  !((A1 | A2) & (B1 | B2))          F = !(!(!d*!c)*!(!b*!a))
+    1   : OAI22_X1    1   A =    1.33  L =   34.03  D =  29.1 ps  LD =   5.7 ps  PD =  23.3 ps    C =  1.6 ff  Cm =   23 ff    Sm =  0.0 ps 
+Class  24 : Cells =  3   Ins = 4  Outs = 1  !((A1 & A2) | (B1 & B2))          F = (!(d*c)*!(b*a))
+    1   : AOI22_X1    1   A =    1.33  L =   32.61  D =  29.8 ps  LD =   5.8 ps  PD =  24.1 ps    C =  1.6 ff  Cm =   25 ff    Sm =  0.0 ps 
+Class  25 : Cells =  3   Ins = 5  Outs = 1  !(((C1 | C2) & A) & (B1 | B2))    F = !(a*!(!e*!d)*!(!c*!b))
+    1   : OAI221_X1   1   A =    1.60  L =   33.94  D =  34.3 ps  LD =   5.9 ps  PD =  28.3 ps    C =  1.6 ff  Cm =   22 ff    Sm =  0.0 ps 
+Class  26 : Cells =  3   Ins = 5  Outs = 1  !(!(!(((C1 & C2) | A) | (B1 & B2))))    F = (!a*!(e*d)*!(c*b))
+    1   : AOI221_X4   4   A =    3.46  L =  131.58  D =  78.8 ps  LD =   0.7 ps  PD =  78.0 ps    C =  1.5 ff  Cm =  242 ff    Sm =  0.0 ps 
+Class  27 : Cells =  3   Ins = 6  Outs = 1  !(((A1 & A2) | (B1 & B2)) | (C1 & C2))    F = (!(f*e)*!(d*c)*!(b*a))
+    1   : AOI222_X1   1   A =    2.13  L =   47.40  D =  49.0 ps  LD =   7.9 ps  PD =  41.1 ps    C =  1.5 ff  Cm =   13 ff    Sm =  0.0 ps 
+Class  28 : Cells =  3   Ins = 6  Outs = 1  !(((A1 | A2) & (B1 | B2)) & (C1 | C2))    F = !(!(!f*!e)*!(!d*!c)*!(!b*!a))
+    1   : OAI222_X1   1   A =    2.13  L =   43.18  D =  40.1 ps  LD =   6.4 ps  PD =  33.7 ps    C =  1.5 ff  Cm =   20 ff    Sm =  0.0 ps 
+Class  29 : Cells =  1   Ins = 6  Outs = 1  !(((A1 | A2) | A3) & ((B1 | B2) | B3))    F = !(!(!f*!e*!d)*!(!c*!b*!a))
+    1   : OAI33_X1    1   A =    1.86  L =   48.31  D =  44.1 ps  LD =   8.0 ps  PD =  36.1 ps    C =  1.5 ff  Cm =   11 ff    Sm =  0.0 ps 

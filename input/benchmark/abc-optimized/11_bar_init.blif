@@ -1,0 +1,6797 @@
+.model epfl-original/arithmetic/1_bar
+.inputs a[0] a[1] a[2] a[3] a[4] a[5] a[6] a[7] a[8] a[9] a[10] a[11] a[12] a[13] a[14] a[15] a[16] a[17] a[18] a[19] a[20] a[21] a[22] a[23] a[24] a[25] a[26] a[27] a[28] a[29] a[30] a[31] a[32] a[33] a[34] a[35] a[36] a[37] a[38] a[39] a[40] a[41] a[42] a[43] a[44] a[45] a[46] a[47] a[48] a[49] a[50] a[51] a[52] a[53] a[54] a[55] a[56] a[57] a[58] a[59] a[60] a[61] a[62] a[63] a[64] a[65] a[66] a[67] a[68] a[69] a[70] a[71] a[72] a[73] a[74] a[75] a[76] a[77] a[78] a[79] a[80] a[81] a[82] a[83] a[84] a[85] a[86] a[87] a[88] a[89] a[90] a[91] a[92] a[93] a[94] a[95] a[96] a[97] a[98] a[99] a[100] a[101] a[102] a[103] a[104] a[105] a[106] a[107] a[108] a[109] a[110] a[111] a[112] a[113] a[114] a[115] a[116] a[117] a[118] a[119] a[120] a[121] a[122] a[123] a[124] a[125] a[126] a[127] shift[0] shift[1] shift[2] shift[3] shift[4] shift[5] shift[6] 
+.outputs result[0] result[1] result[2] result[3] result[4] result[5] result[6] result[7] result[8] result[9] result[10] result[11] result[12] result[13] result[14] result[15] result[16] result[17] result[18] result[19] result[20] result[21] result[22] result[23] result[24] result[25] result[26] result[27] result[28] result[29] result[30] result[31] result[32] result[33] result[34] result[35] result[36] result[37] result[38] result[39] result[40] result[41] result[42] result[43] result[44] result[45] result[46] result[47] result[48] result[49] result[50] result[51] result[52] result[53] result[54] result[55] result[56] result[57] result[58] result[59] result[60] result[61] result[62] result[63] result[64] result[65] result[66] result[67] result[68] result[69] result[70] result[71] result[72] result[73] result[74] result[75] result[76] result[77] result[78] result[79] result[80] result[81] result[82] result[83] result[84] result[85] result[86] result[87] result[88] result[89] result[90] result[91] result[92] result[93] result[94] result[95] result[96] result[97] result[98] result[99] result[100] result[101] result[102] result[103] result[104] result[105] result[106] result[107] result[108] result[109] result[110] result[111] result[112] result[113] result[114] result[115] result[116] result[117] result[118] result[119] result[120] result[121] result[122] result[123] result[124] result[125] result[126] result[127] 
+.names shift[4] new_n264
+# INV_X1
+0 1
+
+.names shift[5] new_n265
+# INV_X1
+0 1
+
+.names new_n264 new_n265 new_n266
+# NAND2_X1
+11 0
+
+.names shift[2] shift[3] new_n267
+# NAND2_X1
+11 0
+
+.names shift[1] new_n268
+# INV_X1
+0 1
+
+.names shift[0] new_n269
+# INV_X1
+0 1
+
+.names a[114] shift[0] a[113] new_n269 new_n270
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n270 new_n271
+# INV_X1
+0 1
+
+.names a[115] new_n272
+# INV_X1
+0 1
+
+.names a[116] new_n273
+# INV_X1
+0 1
+
+.names new_n272 shift[0] new_n273 new_n269 new_n274
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n268 new_n271 shift[1] new_n274 new_n275
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[2] new_n276
+# INV_X1
+0 1
+
+.names new_n276 shift[3] new_n277
+# NAND2_X1
+11 0
+
+.names a[118] shift[0] a[117] new_n269 new_n278
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n278 new_n279
+# INV_X1
+0 1
+
+.names a[119] new_n280
+# INV_X1
+0 1
+
+.names a[120] new_n281
+# INV_X1
+0 1
+
+.names new_n280 shift[0] new_n281 new_n269 new_n282
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n268 new_n279 shift[1] new_n282 new_n283
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n275 new_n277 new_n283 new_n284
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[2] shift[3] new_n285
+# OR2_X1
+00 0
+
+.names a[126] shift[0] a[125] new_n269 new_n286
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n286 new_n287
+# INV_X1
+0 1
+
+.names a[127] new_n288
+# INV_X1
+0 1
+
+.names a[0] new_n289
+# INV_X1
+0 1
+
+.names new_n288 shift[0] new_n289 new_n269 new_n290
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n268 new_n287 shift[1] new_n290 new_n291
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n276 shift[3] new_n292
+# OR2_X1
+00 0
+
+.names a[122] shift[0] a[121] new_n269 new_n293
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n293 new_n294
+# INV_X1
+0 1
+
+.names a[123] new_n295
+# INV_X1
+0 1
+
+.names a[124] new_n296
+# INV_X1
+0 1
+
+.names new_n295 shift[0] new_n296 new_n269 new_n297
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n268 new_n294 shift[1] new_n297 new_n298
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n291 new_n292 new_n298 new_n299
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n284 new_n299 new_n300
+# NOR2_X1
+00 1
+
+.names shift[4] new_n265 new_n301
+# NAND2_X1
+11 0
+
+.names a[98] shift[0] a[97] new_n269 new_n302
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n302 new_n303
+# INV_X1
+0 1
+
+.names a[99] new_n304
+# INV_X1
+0 1
+
+.names a[100] new_n305
+# INV_X1
+0 1
+
+.names new_n304 shift[0] new_n305 new_n269 new_n306
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n268 new_n303 shift[1] new_n306 new_n307
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[102] shift[0] a[101] new_n269 new_n308
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n308 new_n309
+# INV_X1
+0 1
+
+.names a[103] new_n310
+# INV_X1
+0 1
+
+.names a[104] new_n311
+# INV_X1
+0 1
+
+.names new_n310 shift[0] new_n311 new_n269 new_n312
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n268 new_n309 shift[1] new_n312 new_n313
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n307 new_n277 new_n313 new_n314
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[110] shift[0] a[109] new_n269 new_n315
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n315 new_n316
+# INV_X1
+0 1
+
+.names a[111] new_n317
+# INV_X1
+0 1
+
+.names a[112] new_n318
+# INV_X1
+0 1
+
+.names new_n317 shift[0] new_n318 new_n269 new_n319
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n268 new_n316 shift[1] new_n319 new_n320
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[106] shift[0] a[105] new_n269 new_n321
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n321 new_n322
+# INV_X1
+0 1
+
+.names a[107] new_n323
+# INV_X1
+0 1
+
+.names a[108] new_n324
+# INV_X1
+0 1
+
+.names new_n323 shift[0] new_n324 new_n269 new_n325
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n268 new_n322 shift[1] new_n325 new_n326
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n320 new_n292 new_n326 new_n327
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n314 new_n327 new_n328
+# NOR2_X1
+00 1
+
+.names new_n266 new_n300 new_n301 new_n328 new_n329
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[4] shift[5] new_n330
+# NAND2_X1
+11 0
+
+.names a[66] shift[0] a[65] new_n269 new_n331
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n331 new_n332
+# INV_X1
+0 1
+
+.names a[67] new_n333
+# INV_X1
+0 1
+
+.names a[68] new_n334
+# INV_X1
+0 1
+
+.names new_n333 shift[0] new_n334 new_n269 new_n335
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n268 new_n332 shift[1] new_n335 new_n336
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[70] shift[0] a[69] new_n269 new_n337
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n337 new_n338
+# INV_X1
+0 1
+
+.names a[71] new_n339
+# INV_X1
+0 1
+
+.names a[72] new_n340
+# INV_X1
+0 1
+
+.names new_n339 shift[0] new_n340 new_n269 new_n341
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n268 new_n338 shift[1] new_n341 new_n342
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n336 new_n277 new_n342 new_n343
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[78] shift[0] a[77] new_n269 new_n344
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n344 new_n345
+# INV_X1
+0 1
+
+.names a[79] new_n346
+# INV_X1
+0 1
+
+.names a[80] new_n347
+# INV_X1
+0 1
+
+.names new_n346 shift[0] new_n347 new_n269 new_n348
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n268 new_n345 shift[1] new_n348 new_n349
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[74] shift[0] a[73] new_n269 new_n350
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n350 new_n351
+# INV_X1
+0 1
+
+.names a[75] new_n352
+# INV_X1
+0 1
+
+.names a[76] new_n353
+# INV_X1
+0 1
+
+.names new_n352 shift[0] new_n353 new_n269 new_n354
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n268 new_n351 shift[1] new_n354 new_n355
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n349 new_n292 new_n355 new_n356
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n343 new_n356 new_n357
+# NOR2_X1
+00 1
+
+.names new_n264 shift[5] new_n358
+# NAND2_X1
+11 0
+
+.names a[82] shift[0] a[81] new_n269 new_n359
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n359 new_n360
+# INV_X1
+0 1
+
+.names a[83] new_n361
+# INV_X1
+0 1
+
+.names a[84] new_n362
+# INV_X1
+0 1
+
+.names new_n361 shift[0] new_n362 new_n269 new_n363
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n268 new_n360 shift[1] new_n363 new_n364
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[86] shift[0] a[85] new_n269 new_n365
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n365 new_n366
+# INV_X1
+0 1
+
+.names a[87] new_n367
+# INV_X1
+0 1
+
+.names a[88] new_n368
+# INV_X1
+0 1
+
+.names new_n367 shift[0] new_n368 new_n269 new_n369
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n268 new_n366 shift[1] new_n369 new_n370
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n364 new_n277 new_n370 new_n371
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[94] shift[0] a[93] new_n269 new_n372
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n372 new_n373
+# INV_X1
+0 1
+
+.names a[95] new_n374
+# INV_X1
+0 1
+
+.names a[96] new_n375
+# INV_X1
+0 1
+
+.names new_n374 shift[0] new_n375 new_n269 new_n376
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n268 new_n373 shift[1] new_n376 new_n377
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[90] shift[0] a[89] new_n269 new_n378
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n378 new_n379
+# INV_X1
+0 1
+
+.names a[91] new_n380
+# INV_X1
+0 1
+
+.names a[92] new_n381
+# INV_X1
+0 1
+
+.names new_n380 shift[0] new_n381 new_n269 new_n382
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n268 new_n379 shift[1] new_n382 new_n383
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n377 new_n292 new_n383 new_n384
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n371 new_n384 new_n385
+# NOR2_X1
+00 1
+
+.names new_n330 new_n357 new_n358 new_n385 new_n386
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n329 new_n386 new_n387
+# NOR2_X1
+00 1
+
+.names shift[6] new_n388
+# INV_X1
+0 1
+
+.names a[50] shift[0] a[49] new_n269 new_n389
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n389 new_n390
+# INV_X1
+0 1
+
+.names a[51] new_n391
+# INV_X1
+0 1
+
+.names a[52] new_n392
+# INV_X1
+0 1
+
+.names new_n391 shift[0] new_n392 new_n269 new_n393
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n268 new_n390 shift[1] new_n393 new_n394
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[54] shift[0] a[53] new_n269 new_n395
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n395 new_n396
+# INV_X1
+0 1
+
+.names a[55] new_n397
+# INV_X1
+0 1
+
+.names a[56] new_n398
+# INV_X1
+0 1
+
+.names new_n397 shift[0] new_n398 new_n269 new_n399
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n268 new_n396 shift[1] new_n399 new_n400
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n394 new_n277 new_n400 new_n401
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[62] shift[0] a[61] new_n269 new_n402
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n402 new_n403
+# INV_X1
+0 1
+
+.names a[63] new_n404
+# INV_X1
+0 1
+
+.names a[64] new_n405
+# INV_X1
+0 1
+
+.names new_n404 shift[0] new_n405 new_n269 new_n406
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n268 new_n403 shift[1] new_n406 new_n407
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[58] shift[0] a[57] new_n269 new_n408
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n408 new_n409
+# INV_X1
+0 1
+
+.names a[59] new_n410
+# INV_X1
+0 1
+
+.names a[60] new_n411
+# INV_X1
+0 1
+
+.names new_n410 shift[0] new_n411 new_n269 new_n412
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n268 new_n409 shift[1] new_n412 new_n413
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n407 new_n292 new_n413 new_n414
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n401 new_n414 new_n415
+# NOR2_X1
+00 1
+
+.names a[34] shift[0] a[33] new_n269 new_n416
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n416 new_n417
+# INV_X1
+0 1
+
+.names a[35] new_n269 a[36] shift[0] new_n418
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n418 new_n419
+# INV_X1
+0 1
+
+.names new_n268 new_n417 shift[1] new_n419 new_n420
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[38] new_n269 new_n421
+# AND2_X1
+11 1
+
+.names a[39] new_n422
+# INV_X1
+0 1
+
+.names new_n422 new_n269 new_n423
+# NOR2_X1
+00 1
+
+.names new_n268 new_n421 shift[1] new_n423 new_n424
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[40] new_n269 new_n425
+# NAND2_X1
+11 0
+
+.names a[37] shift[0] new_n426
+# NAND2_X1
+11 0
+
+.names new_n424 shift[1] new_n425 new_n268 new_n426 new_n427
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n427 new_n428
+# INV_X1
+0 1
+
+.names new_n267 new_n420 new_n277 new_n428 new_n429
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[46] shift[0] a[45] new_n269 new_n430
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n430 new_n431
+# INV_X1
+0 1
+
+.names a[47] new_n432
+# INV_X1
+0 1
+
+.names a[48] new_n433
+# INV_X1
+0 1
+
+.names new_n432 shift[0] new_n433 new_n269 new_n434
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n268 new_n431 shift[1] new_n434 new_n435
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[42] shift[0] a[41] new_n269 new_n436
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n436 new_n437
+# INV_X1
+0 1
+
+.names a[43] new_n269 a[44] shift[0] new_n438
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n438 new_n439
+# INV_X1
+0 1
+
+.names new_n268 new_n437 shift[1] new_n439 new_n440
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n435 new_n292 new_n440 new_n441
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n429 new_n441 new_n442
+# NOR2_X1
+00 1
+
+.names new_n266 new_n415 new_n301 new_n442 new_n443
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[2] shift[0] a[1] new_n269 new_n444
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n444 new_n445
+# INV_X1
+0 1
+
+.names a[3] new_n446
+# INV_X1
+0 1
+
+.names a[4] new_n447
+# INV_X1
+0 1
+
+.names new_n446 shift[0] new_n447 new_n269 new_n448
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n268 new_n445 shift[1] new_n448 new_n449
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[6] shift[0] a[5] new_n269 new_n450
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n450 new_n451
+# INV_X1
+0 1
+
+.names a[7] new_n452
+# INV_X1
+0 1
+
+.names a[8] new_n453
+# INV_X1
+0 1
+
+.names new_n452 shift[0] new_n453 new_n269 new_n454
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n268 new_n451 shift[1] new_n454 new_n455
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n449 new_n277 new_n455 new_n456
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[14] shift[0] a[13] new_n269 new_n457
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n457 new_n458
+# INV_X1
+0 1
+
+.names a[15] new_n459
+# INV_X1
+0 1
+
+.names a[16] new_n460
+# INV_X1
+0 1
+
+.names new_n459 shift[0] new_n460 new_n269 new_n461
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n268 new_n458 shift[1] new_n461 new_n462
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[10] shift[0] a[9] new_n269 new_n463
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n463 new_n464
+# INV_X1
+0 1
+
+.names a[11] new_n465
+# INV_X1
+0 1
+
+.names a[12] new_n466
+# INV_X1
+0 1
+
+.names new_n465 shift[0] new_n466 new_n269 new_n467
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n268 new_n464 shift[1] new_n467 new_n468
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n462 new_n292 new_n468 new_n469
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n456 new_n469 new_n470
+# NOR2_X1
+00 1
+
+.names a[18] shift[0] a[17] new_n269 new_n471
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n471 new_n472
+# INV_X1
+0 1
+
+.names a[19] new_n473
+# INV_X1
+0 1
+
+.names a[20] new_n474
+# INV_X1
+0 1
+
+.names new_n473 shift[0] new_n474 new_n269 new_n475
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n268 new_n472 shift[1] new_n475 new_n476
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[22] shift[0] a[21] new_n269 new_n477
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n477 new_n478
+# INV_X1
+0 1
+
+.names a[23] new_n479
+# INV_X1
+0 1
+
+.names a[24] new_n480
+# INV_X1
+0 1
+
+.names new_n479 shift[0] new_n480 new_n269 new_n481
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n268 new_n478 shift[1] new_n481 new_n482
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n476 new_n277 new_n482 new_n483
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[30] shift[0] a[29] new_n269 new_n484
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n484 new_n485
+# INV_X1
+0 1
+
+.names a[31] new_n486
+# INV_X1
+0 1
+
+.names a[32] new_n487
+# INV_X1
+0 1
+
+.names new_n486 shift[0] new_n487 new_n269 new_n488
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n268 new_n485 shift[1] new_n488 new_n489
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[26] shift[0] a[25] new_n269 new_n490
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n490 new_n491
+# INV_X1
+0 1
+
+.names a[27] new_n492
+# INV_X1
+0 1
+
+.names a[28] new_n493
+# INV_X1
+0 1
+
+.names new_n492 shift[0] new_n493 new_n269 new_n494
+# AOI22_X1
+--11 0
+11-- 0
+
+.names new_n268 new_n491 shift[1] new_n494 new_n495
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n489 new_n292 new_n495 new_n496
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n483 new_n496 new_n497
+# NOR2_X1
+00 1
+
+.names new_n330 new_n470 new_n358 new_n497 new_n498
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n443 new_n498 new_n499
+# NOR2_X1
+00 1
+
+.names shift[6] new_n387 new_n388 new_n499 result[0]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n272 shift[0] new_n501
+# NOR2_X1
+00 1
+
+.names new_n273 new_n269 new_n502
+# NOR2_X1
+00 1
+
+.names new_n268 new_n501 shift[1] new_n502 new_n503
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[117] new_n269 new_n504
+# NAND2_X1
+11 0
+
+.names a[114] shift[0] new_n505
+# NAND2_X1
+11 0
+
+.names new_n503 shift[1] new_n504 new_n268 new_n505 new_n506
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n506 new_n507
+# INV_X1
+0 1
+
+.names new_n280 shift[0] new_n508
+# NOR2_X1
+00 1
+
+.names new_n281 new_n269 new_n509
+# NOR2_X1
+00 1
+
+.names new_n268 new_n508 shift[1] new_n509 new_n510
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[121] new_n269 new_n511
+# NAND2_X1
+11 0
+
+.names a[118] shift[0] new_n512
+# NAND2_X1
+11 0
+
+.names new_n510 shift[1] new_n511 new_n268 new_n512 new_n513
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n513 new_n514
+# INV_X1
+0 1
+
+.names new_n267 new_n507 new_n277 new_n514 new_n515
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n288 shift[0] new_n516
+# NOR2_X1
+00 1
+
+.names new_n289 new_n269 new_n517
+# NOR2_X1
+00 1
+
+.names new_n268 new_n516 shift[1] new_n517 new_n518
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[1] new_n269 new_n519
+# NAND2_X1
+11 0
+
+.names a[126] shift[0] new_n520
+# NAND2_X1
+11 0
+
+.names new_n518 shift[1] new_n519 new_n268 new_n520 new_n521
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n521 new_n522
+# INV_X1
+0 1
+
+.names new_n295 shift[0] new_n523
+# NOR2_X1
+00 1
+
+.names new_n296 new_n269 new_n524
+# NOR2_X1
+00 1
+
+.names new_n268 new_n523 shift[1] new_n524 new_n525
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[125] new_n269 new_n526
+# NAND2_X1
+11 0
+
+.names a[122] shift[0] new_n527
+# NAND2_X1
+11 0
+
+.names new_n525 shift[1] new_n526 new_n268 new_n527 new_n528
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n528 new_n529
+# INV_X1
+0 1
+
+.names new_n285 new_n522 new_n292 new_n529 new_n530
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n515 new_n530 new_n531
+# NOR2_X1
+00 1
+
+.names new_n304 shift[0] new_n532
+# NOR2_X1
+00 1
+
+.names new_n305 new_n269 new_n533
+# NOR2_X1
+00 1
+
+.names new_n268 new_n532 shift[1] new_n533 new_n534
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[101] new_n269 new_n535
+# NAND2_X1
+11 0
+
+.names a[98] shift[0] new_n536
+# NAND2_X1
+11 0
+
+.names new_n534 shift[1] new_n535 new_n268 new_n536 new_n537
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n537 new_n538
+# INV_X1
+0 1
+
+.names new_n310 shift[0] new_n539
+# NOR2_X1
+00 1
+
+.names new_n311 new_n269 new_n540
+# NOR2_X1
+00 1
+
+.names new_n268 new_n539 shift[1] new_n540 new_n541
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[105] new_n269 new_n542
+# NAND2_X1
+11 0
+
+.names a[102] shift[0] new_n543
+# NAND2_X1
+11 0
+
+.names new_n541 shift[1] new_n542 new_n268 new_n543 new_n544
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n544 new_n545
+# INV_X1
+0 1
+
+.names new_n267 new_n538 new_n277 new_n545 new_n546
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n317 shift[0] new_n547
+# NOR2_X1
+00 1
+
+.names new_n318 new_n269 new_n548
+# NOR2_X1
+00 1
+
+.names new_n268 new_n547 shift[1] new_n548 new_n549
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[113] new_n269 new_n550
+# NAND2_X1
+11 0
+
+.names a[110] shift[0] new_n551
+# NAND2_X1
+11 0
+
+.names new_n549 shift[1] new_n550 new_n268 new_n551 new_n552
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n552 new_n553
+# INV_X1
+0 1
+
+.names new_n323 shift[0] new_n554
+# NOR2_X1
+00 1
+
+.names new_n324 new_n269 new_n555
+# NOR2_X1
+00 1
+
+.names new_n268 new_n554 shift[1] new_n555 new_n556
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[109] new_n269 new_n557
+# NAND2_X1
+11 0
+
+.names a[106] shift[0] new_n558
+# NAND2_X1
+11 0
+
+.names new_n556 shift[1] new_n557 new_n268 new_n558 new_n559
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n559 new_n560
+# INV_X1
+0 1
+
+.names new_n285 new_n553 new_n292 new_n560 new_n561
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n546 new_n561 new_n562
+# NOR2_X1
+00 1
+
+.names new_n266 new_n531 new_n301 new_n562 new_n563
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n333 shift[0] new_n564
+# NOR2_X1
+00 1
+
+.names new_n334 new_n269 new_n565
+# NOR2_X1
+00 1
+
+.names new_n268 new_n564 shift[1] new_n565 new_n566
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[69] new_n269 new_n567
+# NAND2_X1
+11 0
+
+.names a[66] shift[0] new_n568
+# NAND2_X1
+11 0
+
+.names new_n566 shift[1] new_n567 new_n268 new_n568 new_n569
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n569 new_n570
+# INV_X1
+0 1
+
+.names new_n339 shift[0] new_n571
+# NOR2_X1
+00 1
+
+.names new_n340 new_n269 new_n572
+# NOR2_X1
+00 1
+
+.names new_n268 new_n571 shift[1] new_n572 new_n573
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[73] new_n269 new_n574
+# NAND2_X1
+11 0
+
+.names a[70] shift[0] new_n575
+# NAND2_X1
+11 0
+
+.names new_n573 shift[1] new_n574 new_n268 new_n575 new_n576
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n576 new_n577
+# INV_X1
+0 1
+
+.names new_n267 new_n570 new_n277 new_n577 new_n578
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n346 shift[0] new_n579
+# NOR2_X1
+00 1
+
+.names new_n347 new_n269 new_n580
+# NOR2_X1
+00 1
+
+.names new_n268 new_n579 shift[1] new_n580 new_n581
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[81] new_n269 new_n582
+# NAND2_X1
+11 0
+
+.names a[78] shift[0] new_n583
+# NAND2_X1
+11 0
+
+.names new_n581 shift[1] new_n582 new_n268 new_n583 new_n584
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n584 new_n585
+# INV_X1
+0 1
+
+.names new_n352 shift[0] new_n586
+# NOR2_X1
+00 1
+
+.names new_n353 new_n269 new_n587
+# NOR2_X1
+00 1
+
+.names new_n268 new_n586 shift[1] new_n587 new_n588
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[77] new_n269 new_n589
+# NAND2_X1
+11 0
+
+.names a[74] shift[0] new_n590
+# NAND2_X1
+11 0
+
+.names new_n588 shift[1] new_n589 new_n268 new_n590 new_n591
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n591 new_n592
+# INV_X1
+0 1
+
+.names new_n285 new_n585 new_n292 new_n592 new_n593
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n578 new_n593 new_n594
+# NOR2_X1
+00 1
+
+.names new_n361 shift[0] new_n595
+# NOR2_X1
+00 1
+
+.names new_n362 new_n269 new_n596
+# NOR2_X1
+00 1
+
+.names new_n268 new_n595 shift[1] new_n596 new_n597
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[85] new_n269 new_n598
+# NAND2_X1
+11 0
+
+.names a[82] shift[0] new_n599
+# NAND2_X1
+11 0
+
+.names new_n597 shift[1] new_n598 new_n268 new_n599 new_n600
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n600 new_n601
+# INV_X1
+0 1
+
+.names new_n367 shift[0] new_n602
+# NOR2_X1
+00 1
+
+.names new_n368 new_n269 new_n603
+# NOR2_X1
+00 1
+
+.names new_n268 new_n602 shift[1] new_n603 new_n604
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[89] new_n269 new_n605
+# NAND2_X1
+11 0
+
+.names a[86] shift[0] new_n606
+# NAND2_X1
+11 0
+
+.names new_n604 shift[1] new_n605 new_n268 new_n606 new_n607
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n607 new_n608
+# INV_X1
+0 1
+
+.names new_n267 new_n601 new_n277 new_n608 new_n609
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n374 shift[0] new_n610
+# NOR2_X1
+00 1
+
+.names new_n375 new_n269 new_n611
+# NOR2_X1
+00 1
+
+.names new_n268 new_n610 shift[1] new_n611 new_n612
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[97] new_n269 new_n613
+# NAND2_X1
+11 0
+
+.names a[94] shift[0] new_n614
+# NAND2_X1
+11 0
+
+.names new_n612 shift[1] new_n613 new_n268 new_n614 new_n615
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n615 new_n616
+# INV_X1
+0 1
+
+.names new_n380 shift[0] new_n617
+# NOR2_X1
+00 1
+
+.names new_n381 new_n269 new_n618
+# NOR2_X1
+00 1
+
+.names new_n268 new_n617 shift[1] new_n618 new_n619
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[93] new_n269 new_n620
+# NAND2_X1
+11 0
+
+.names a[90] shift[0] new_n621
+# NAND2_X1
+11 0
+
+.names new_n619 shift[1] new_n620 new_n268 new_n621 new_n622
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n622 new_n623
+# INV_X1
+0 1
+
+.names new_n285 new_n616 new_n292 new_n623 new_n624
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n609 new_n624 new_n625
+# NOR2_X1
+00 1
+
+.names new_n330 new_n594 new_n358 new_n625 new_n626
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n563 new_n626 new_n627
+# NOR2_X1
+00 1
+
+.names a[35] new_n269 new_n628
+# AND2_X1
+11 1
+
+.names a[36] shift[0] new_n629
+# AND2_X1
+11 1
+
+.names new_n268 new_n628 shift[1] new_n629 new_n630
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[37] new_n269 new_n631
+# NAND2_X1
+11 0
+
+.names a[34] shift[0] new_n632
+# NAND2_X1
+11 0
+
+.names new_n630 shift[1] new_n631 new_n268 new_n632 new_n633
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n633 new_n634
+# INV_X1
+0 1
+
+.names a[40] shift[0] new_n635
+# AND2_X1
+11 1
+
+.names new_n635 a[41] new_n269 new_n636
+# AOI21_X1
+0-0 1
+00- 1
+
+.names new_n422 shift[0] new_n637
+# NOR2_X1
+00 1
+
+.names new_n637 a[38] shift[0] new_n638
+# AOI21_X1
+0-0 1
+00- 1
+
+.names shift[1] new_n636 new_n268 new_n638 new_n639
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n639 new_n640
+# INV_X1
+0 1
+
+.names new_n267 new_n634 new_n277 new_n640 new_n641
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n432 shift[0] new_n642
+# NOR2_X1
+00 1
+
+.names new_n433 new_n269 new_n643
+# NOR2_X1
+00 1
+
+.names new_n268 new_n642 shift[1] new_n643 new_n644
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[49] new_n269 new_n645
+# NAND2_X1
+11 0
+
+.names a[46] shift[0] new_n646
+# NAND2_X1
+11 0
+
+.names new_n644 shift[1] new_n645 new_n268 new_n646 new_n647
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n647 new_n648
+# INV_X1
+0 1
+
+.names a[43] new_n269 new_n649
+# AND2_X1
+11 1
+
+.names new_n649 a[42] shift[0] new_n650
+# AOI21_X1
+0-0 1
+00- 1
+
+.names a[44] new_n269 a[45] shift[0] new_n651
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n650 shift[1] new_n651 new_n652
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n652 new_n653
+# INV_X1
+0 1
+
+.names new_n285 new_n648 new_n292 new_n653 new_n654
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n641 new_n654 new_n655
+# NOR2_X1
+00 1
+
+.names new_n473 shift[0] new_n656
+# NOR2_X1
+00 1
+
+.names new_n474 new_n269 new_n657
+# NOR2_X1
+00 1
+
+.names new_n268 new_n656 shift[1] new_n657 new_n658
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[21] new_n269 new_n659
+# NAND2_X1
+11 0
+
+.names a[18] shift[0] new_n660
+# NAND2_X1
+11 0
+
+.names new_n658 shift[1] new_n659 new_n268 new_n660 new_n661
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n661 new_n662
+# INV_X1
+0 1
+
+.names new_n479 shift[0] new_n663
+# NOR2_X1
+00 1
+
+.names new_n480 new_n269 new_n664
+# NOR2_X1
+00 1
+
+.names new_n268 new_n663 shift[1] new_n664 new_n665
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[25] new_n269 new_n666
+# NAND2_X1
+11 0
+
+.names a[22] shift[0] new_n667
+# NAND2_X1
+11 0
+
+.names new_n665 shift[1] new_n666 new_n268 new_n667 new_n668
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n668 new_n669
+# INV_X1
+0 1
+
+.names new_n267 new_n662 new_n277 new_n669 new_n670
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n486 shift[0] new_n671
+# NOR2_X1
+00 1
+
+.names new_n487 new_n269 new_n672
+# NOR2_X1
+00 1
+
+.names new_n268 new_n671 shift[1] new_n672 new_n673
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[33] new_n269 new_n674
+# NAND2_X1
+11 0
+
+.names a[30] shift[0] new_n675
+# NAND2_X1
+11 0
+
+.names new_n673 shift[1] new_n674 new_n268 new_n675 new_n676
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n676 new_n677
+# INV_X1
+0 1
+
+.names new_n492 shift[0] new_n678
+# NOR2_X1
+00 1
+
+.names new_n493 new_n269 new_n679
+# NOR2_X1
+00 1
+
+.names new_n268 new_n678 shift[1] new_n679 new_n680
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[29] new_n269 new_n681
+# NAND2_X1
+11 0
+
+.names a[26] shift[0] new_n682
+# NAND2_X1
+11 0
+
+.names new_n680 shift[1] new_n681 new_n268 new_n682 new_n683
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n683 new_n684
+# INV_X1
+0 1
+
+.names new_n285 new_n677 new_n292 new_n684 new_n685
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n670 new_n685 new_n686
+# NOR2_X1
+00 1
+
+.names new_n301 new_n655 new_n358 new_n686 new_n687
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n391 shift[0] new_n688
+# NOR2_X1
+00 1
+
+.names new_n392 new_n269 new_n689
+# NOR2_X1
+00 1
+
+.names new_n268 new_n688 shift[1] new_n689 new_n690
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[53] new_n269 new_n691
+# NAND2_X1
+11 0
+
+.names a[50] shift[0] new_n692
+# NAND2_X1
+11 0
+
+.names new_n690 shift[1] new_n691 new_n268 new_n692 new_n693
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n693 new_n694
+# INV_X1
+0 1
+
+.names new_n397 shift[0] new_n695
+# NOR2_X1
+00 1
+
+.names new_n398 new_n269 new_n696
+# NOR2_X1
+00 1
+
+.names new_n268 new_n695 shift[1] new_n696 new_n697
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[57] new_n269 new_n698
+# NAND2_X1
+11 0
+
+.names a[54] shift[0] new_n699
+# NAND2_X1
+11 0
+
+.names new_n697 shift[1] new_n698 new_n268 new_n699 new_n700
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n700 new_n701
+# INV_X1
+0 1
+
+.names new_n267 new_n694 new_n277 new_n701 new_n702
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n404 shift[0] new_n703
+# NOR2_X1
+00 1
+
+.names new_n405 new_n269 new_n704
+# NOR2_X1
+00 1
+
+.names new_n268 new_n703 shift[1] new_n704 new_n705
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[65] new_n269 new_n706
+# NAND2_X1
+11 0
+
+.names a[62] shift[0] new_n707
+# NAND2_X1
+11 0
+
+.names new_n705 shift[1] new_n706 new_n268 new_n707 new_n708
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n708 new_n709
+# INV_X1
+0 1
+
+.names new_n410 shift[0] new_n710
+# NOR2_X1
+00 1
+
+.names new_n411 new_n269 new_n711
+# NOR2_X1
+00 1
+
+.names new_n268 new_n710 shift[1] new_n711 new_n712
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[61] new_n269 new_n713
+# NAND2_X1
+11 0
+
+.names a[58] shift[0] new_n714
+# NAND2_X1
+11 0
+
+.names new_n712 shift[1] new_n713 new_n268 new_n714 new_n715
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n715 new_n716
+# INV_X1
+0 1
+
+.names new_n285 new_n709 new_n292 new_n716 new_n717
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n702 new_n717 new_n718
+# NOR2_X1
+00 1
+
+.names new_n446 shift[0] new_n719
+# NOR2_X1
+00 1
+
+.names new_n447 new_n269 new_n720
+# NOR2_X1
+00 1
+
+.names new_n268 new_n719 shift[1] new_n720 new_n721
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[5] new_n269 new_n722
+# NAND2_X1
+11 0
+
+.names a[2] shift[0] new_n723
+# NAND2_X1
+11 0
+
+.names new_n721 shift[1] new_n722 new_n268 new_n723 new_n724
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n724 new_n725
+# INV_X1
+0 1
+
+.names new_n452 shift[0] new_n726
+# NOR2_X1
+00 1
+
+.names new_n453 new_n269 new_n727
+# NOR2_X1
+00 1
+
+.names new_n268 new_n726 shift[1] new_n727 new_n728
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[9] new_n269 new_n729
+# NAND2_X1
+11 0
+
+.names a[6] shift[0] new_n730
+# NAND2_X1
+11 0
+
+.names new_n728 shift[1] new_n729 new_n268 new_n730 new_n731
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n731 new_n732
+# INV_X1
+0 1
+
+.names new_n267 new_n725 new_n277 new_n732 new_n733
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n459 shift[0] new_n734
+# NOR2_X1
+00 1
+
+.names new_n460 new_n269 new_n735
+# NOR2_X1
+00 1
+
+.names new_n268 new_n734 shift[1] new_n735 new_n736
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[17] new_n269 new_n737
+# NAND2_X1
+11 0
+
+.names a[14] shift[0] new_n738
+# NAND2_X1
+11 0
+
+.names new_n736 shift[1] new_n737 new_n268 new_n738 new_n739
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n739 new_n740
+# INV_X1
+0 1
+
+.names new_n465 shift[0] new_n741
+# NOR2_X1
+00 1
+
+.names new_n466 new_n269 new_n742
+# NOR2_X1
+00 1
+
+.names new_n268 new_n741 shift[1] new_n742 new_n743
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[13] new_n269 new_n744
+# NAND2_X1
+11 0
+
+.names a[10] shift[0] new_n745
+# NAND2_X1
+11 0
+
+.names new_n743 shift[1] new_n744 new_n268 new_n745 new_n746
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n746 new_n747
+# INV_X1
+0 1
+
+.names new_n285 new_n740 new_n292 new_n747 new_n748
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n733 new_n748 new_n749
+# NOR2_X1
+00 1
+
+.names new_n266 new_n718 new_n330 new_n749 new_n750
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n687 new_n750 new_n751
+# NOR2_X1
+00 1
+
+.names shift[6] new_n627 new_n388 new_n751 result[1]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n274 shift[1] new_n279 new_n753
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n282 shift[1] new_n294 new_n754
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n753 new_n277 new_n754 new_n755
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n290 shift[1] new_n445 new_n756
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n297 shift[1] new_n287 new_n757
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n756 new_n292 new_n757 new_n758
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n755 new_n758 new_n759
+# NOR2_X1
+00 1
+
+.names new_n268 new_n306 shift[1] new_n309 new_n760
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n312 shift[1] new_n322 new_n761
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n760 new_n277 new_n761 new_n762
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n319 shift[1] new_n271 new_n763
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n325 shift[1] new_n316 new_n764
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n763 new_n292 new_n764 new_n765
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n762 new_n765 new_n766
+# NOR2_X1
+00 1
+
+.names new_n266 new_n759 new_n301 new_n766 new_n767
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n335 shift[1] new_n338 new_n768
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n341 shift[1] new_n351 new_n769
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n768 new_n277 new_n769 new_n770
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n348 shift[1] new_n360 new_n771
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n354 shift[1] new_n345 new_n772
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n771 new_n292 new_n772 new_n773
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n770 new_n773 new_n774
+# NOR2_X1
+00 1
+
+.names new_n268 new_n363 shift[1] new_n366 new_n775
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n369 shift[1] new_n379 new_n776
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n775 new_n277 new_n776 new_n777
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n376 shift[1] new_n303 new_n778
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n382 shift[1] new_n373 new_n779
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n778 new_n292 new_n779 new_n780
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n777 new_n780 new_n781
+# NOR2_X1
+00 1
+
+.names new_n330 new_n774 new_n358 new_n781 new_n782
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n767 new_n782 new_n783
+# NOR2_X1
+00 1
+
+.names new_n421 a[37] shift[0] new_n784
+# AOI21_X1
+0-0 1
+00- 1
+
+.names shift[1] new_n784 new_n268 new_n418 new_n785
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n785 new_n786
+# INV_X1
+0 1
+
+.names new_n423 a[40] new_n269 new_n787
+# AOI21_X1
+0-0 1
+00- 1
+
+.names shift[1] new_n436 new_n268 new_n787 new_n788
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n788 new_n789
+# INV_X1
+0 1
+
+.names new_n267 new_n786 new_n277 new_n789 new_n790
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n434 shift[1] new_n390 new_n791
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n439 shift[1] new_n431 new_n792
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n791 new_n292 new_n792 new_n793
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n790 new_n793 new_n794
+# NOR2_X1
+00 1
+
+.names new_n268 new_n475 shift[1] new_n478 new_n795
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n481 shift[1] new_n491 new_n796
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n795 new_n277 new_n796 new_n797
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n488 shift[1] new_n417 new_n798
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n494 shift[1] new_n485 new_n799
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n798 new_n292 new_n799 new_n800
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n797 new_n800 new_n801
+# NOR2_X1
+00 1
+
+.names new_n301 new_n794 new_n358 new_n801 new_n802
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n393 shift[1] new_n396 new_n803
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n399 shift[1] new_n409 new_n804
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n803 new_n277 new_n804 new_n805
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n406 shift[1] new_n332 new_n806
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n412 shift[1] new_n403 new_n807
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n806 new_n292 new_n807 new_n808
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n805 new_n808 new_n809
+# NOR2_X1
+00 1
+
+.names new_n268 new_n448 shift[1] new_n451 new_n810
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n454 shift[1] new_n464 new_n811
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n810 new_n277 new_n811 new_n812
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n461 shift[1] new_n472 new_n813
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n467 shift[1] new_n458 new_n814
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n813 new_n292 new_n814 new_n815
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n812 new_n815 new_n816
+# NOR2_X1
+00 1
+
+.names new_n266 new_n809 new_n330 new_n816 new_n817
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n802 new_n817 new_n818
+# NOR2_X1
+00 1
+
+.names shift[6] new_n783 new_n388 new_n818 result[2]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n502 shift[1] new_n508 new_n820
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n820 shift[1] new_n512 new_n268 new_n504 new_n821
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n821 new_n822
+# INV_X1
+0 1
+
+.names new_n268 new_n509 shift[1] new_n523 new_n823
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n823 shift[1] new_n527 new_n268 new_n511 new_n824
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n824 new_n825
+# INV_X1
+0 1
+
+.names new_n267 new_n822 new_n277 new_n825 new_n826
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n517 shift[1] new_n719 new_n827
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n827 shift[1] new_n723 new_n268 new_n519 new_n828
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n828 new_n829
+# INV_X1
+0 1
+
+.names new_n268 new_n524 shift[1] new_n516 new_n830
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n830 shift[1] new_n520 new_n268 new_n526 new_n831
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n831 new_n832
+# INV_X1
+0 1
+
+.names new_n285 new_n829 new_n292 new_n832 new_n833
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n826 new_n833 new_n834
+# NOR2_X1
+00 1
+
+.names new_n268 new_n565 shift[1] new_n571 new_n835
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n835 shift[1] new_n575 new_n268 new_n567 new_n836
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n836 new_n837
+# INV_X1
+0 1
+
+.names new_n268 new_n572 shift[1] new_n586 new_n838
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n838 shift[1] new_n590 new_n268 new_n574 new_n839
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n839 new_n840
+# INV_X1
+0 1
+
+.names new_n267 new_n837 new_n277 new_n840 new_n841
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n580 shift[1] new_n595 new_n842
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n842 shift[1] new_n599 new_n268 new_n582 new_n843
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n843 new_n844
+# INV_X1
+0 1
+
+.names new_n268 new_n587 shift[1] new_n579 new_n845
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n845 shift[1] new_n583 new_n268 new_n589 new_n846
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n846 new_n847
+# INV_X1
+0 1
+
+.names new_n285 new_n844 new_n292 new_n847 new_n848
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n841 new_n848 new_n849
+# NOR2_X1
+00 1
+
+.names new_n266 new_n834 new_n330 new_n849 new_n850
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n533 shift[1] new_n539 new_n851
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n851 shift[1] new_n543 new_n268 new_n535 new_n852
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n852 new_n853
+# INV_X1
+0 1
+
+.names new_n268 new_n540 shift[1] new_n554 new_n854
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n854 shift[1] new_n558 new_n268 new_n542 new_n855
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n855 new_n856
+# INV_X1
+0 1
+
+.names new_n267 new_n853 new_n277 new_n856 new_n857
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n548 shift[1] new_n501 new_n858
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n858 shift[1] new_n505 new_n268 new_n550 new_n859
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n859 new_n860
+# INV_X1
+0 1
+
+.names new_n268 new_n555 shift[1] new_n547 new_n861
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n861 shift[1] new_n551 new_n268 new_n557 new_n862
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n862 new_n863
+# INV_X1
+0 1
+
+.names new_n285 new_n860 new_n292 new_n863 new_n864
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n857 new_n864 new_n865
+# NOR2_X1
+00 1
+
+.names new_n268 new_n596 shift[1] new_n602 new_n866
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n866 shift[1] new_n606 new_n268 new_n598 new_n867
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n867 new_n868
+# INV_X1
+0 1
+
+.names new_n268 new_n603 shift[1] new_n617 new_n869
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n869 shift[1] new_n621 new_n268 new_n605 new_n870
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n870 new_n871
+# INV_X1
+0 1
+
+.names new_n267 new_n868 new_n277 new_n871 new_n872
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n611 shift[1] new_n532 new_n873
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n873 shift[1] new_n536 new_n268 new_n613 new_n874
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n874 new_n875
+# INV_X1
+0 1
+
+.names new_n268 new_n618 shift[1] new_n610 new_n876
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n876 shift[1] new_n614 new_n268 new_n620 new_n877
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n877 new_n878
+# INV_X1
+0 1
+
+.names new_n285 new_n875 new_n292 new_n878 new_n879
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n872 new_n879 new_n880
+# NOR2_X1
+00 1
+
+.names new_n301 new_n865 new_n358 new_n880 new_n881
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n850 new_n881 new_n882
+# NOR2_X1
+00 1
+
+.names new_n268 new_n720 shift[1] new_n726 new_n883
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n883 shift[1] new_n730 new_n268 new_n722 new_n884
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n884 new_n885
+# INV_X1
+0 1
+
+.names new_n268 new_n727 shift[1] new_n741 new_n886
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n886 shift[1] new_n745 new_n268 new_n729 new_n887
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n887 new_n888
+# INV_X1
+0 1
+
+.names new_n267 new_n885 new_n277 new_n888 new_n889
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n735 shift[1] new_n656 new_n890
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n890 shift[1] new_n660 new_n268 new_n737 new_n891
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n891 new_n892
+# INV_X1
+0 1
+
+.names new_n268 new_n742 shift[1] new_n734 new_n893
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n893 shift[1] new_n738 new_n268 new_n744 new_n894
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n894 new_n895
+# INV_X1
+0 1
+
+.names new_n285 new_n892 new_n292 new_n895 new_n896
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n889 new_n896 new_n897
+# NOR2_X1
+00 1
+
+.names new_n268 new_n657 shift[1] new_n663 new_n898
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n898 shift[1] new_n667 new_n268 new_n659 new_n899
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n899 new_n900
+# INV_X1
+0 1
+
+.names new_n268 new_n664 shift[1] new_n678 new_n901
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n901 shift[1] new_n682 new_n268 new_n666 new_n902
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n902 new_n903
+# INV_X1
+0 1
+
+.names new_n267 new_n900 new_n277 new_n903 new_n904
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n672 shift[1] new_n628 new_n905
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n905 shift[1] new_n632 new_n268 new_n674 new_n906
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n906 new_n907
+# INV_X1
+0 1
+
+.names new_n268 new_n679 shift[1] new_n671 new_n908
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n908 shift[1] new_n675 new_n268 new_n681 new_n909
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n909 new_n910
+# INV_X1
+0 1
+
+.names new_n285 new_n907 new_n292 new_n910 new_n911
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n904 new_n911 new_n912
+# NOR2_X1
+00 1
+
+.names new_n330 new_n897 new_n358 new_n912 new_n913
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n689 shift[1] new_n695 new_n914
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n914 shift[1] new_n699 new_n268 new_n691 new_n915
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n915 new_n916
+# INV_X1
+0 1
+
+.names new_n268 new_n696 shift[1] new_n710 new_n917
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n917 shift[1] new_n714 new_n268 new_n698 new_n918
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n918 new_n919
+# INV_X1
+0 1
+
+.names new_n267 new_n916 new_n277 new_n919 new_n920
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n704 shift[1] new_n564 new_n921
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n921 shift[1] new_n568 new_n268 new_n706 new_n922
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n922 new_n923
+# INV_X1
+0 1
+
+.names new_n268 new_n711 shift[1] new_n703 new_n924
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n924 shift[1] new_n707 new_n268 new_n713 new_n925
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n925 new_n926
+# INV_X1
+0 1
+
+.names new_n285 new_n923 new_n292 new_n926 new_n927
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n920 new_n927 new_n928
+# NOR2_X1
+00 1
+
+.names new_n268 new_n629 shift[1] new_n637 new_n929
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[38] shift[0] new_n930
+# NAND2_X1
+11 0
+
+.names new_n929 shift[1] new_n930 new_n268 new_n631 new_n931
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n931 new_n932
+# INV_X1
+0 1
+
+.names new_n268 new_n635 shift[1] new_n649 new_n933
+# OAI22_X1
+--00 1
+00-- 1
+
+.names a[42] shift[0] new_n934
+# NAND2_X1
+11 0
+
+.names a[41] new_n269 new_n935
+# NAND2_X1
+11 0
+
+.names new_n933 shift[1] new_n934 new_n268 new_n935 new_n936
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n936 new_n937
+# INV_X1
+0 1
+
+.names new_n267 new_n932 new_n277 new_n937 new_n938
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n268 new_n643 shift[1] new_n688 new_n939
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n939 shift[1] new_n692 new_n268 new_n645 new_n940
+# OAI221_X1
+-00-- 1
+0---- 1
+---00 1
+
+.names new_n940 new_n941
+# INV_X1
+0 1
+
+.names new_n642 a[46] shift[0] new_n942
+# AOI21_X1
+0-0 1
+00- 1
+
+.names new_n268 new_n651 shift[1] new_n942 new_n943
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n943 new_n944
+# INV_X1
+0 1
+
+.names new_n285 new_n941 new_n292 new_n944 new_n945
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n938 new_n945 new_n946
+# NOR2_X1
+00 1
+
+.names new_n266 new_n928 new_n301 new_n946 new_n947
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n913 new_n947 new_n948
+# NOR2_X1
+00 1
+
+.names shift[6] new_n882 new_n388 new_n948 result[3]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n283 new_n277 new_n298 new_n950
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n449 new_n291 new_n292 new_n951
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n950 new_n951 new_n952
+# NOR2_X1
+00 1
+
+.names new_n267 new_n313 new_n277 new_n326 new_n953
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n275 new_n285 new_n292 new_n320 new_n954
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n953 new_n954 new_n955
+# NOR2_X1
+00 1
+
+.names new_n266 new_n952 new_n301 new_n955 new_n956
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n342 new_n277 new_n355 new_n957
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n364 new_n292 new_n349 new_n958
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n957 new_n958 new_n959
+# NOR2_X1
+00 1
+
+.names new_n267 new_n370 new_n277 new_n383 new_n960
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n307 new_n292 new_n377 new_n961
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n960 new_n961 new_n962
+# NOR2_X1
+00 1
+
+.names new_n330 new_n959 new_n358 new_n962 new_n963
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n956 new_n963 new_n964
+# NOR2_X1
+00 1
+
+.names new_n267 new_n482 new_n277 new_n495 new_n965
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n420 new_n292 new_n489 new_n966
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n965 new_n966 new_n967
+# NOR2_X1
+00 1
+
+.names new_n267 new_n455 new_n277 new_n468 new_n968
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n476 new_n292 new_n462 new_n969
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n968 new_n969 new_n970
+# NOR2_X1
+00 1
+
+.names new_n358 new_n967 new_n330 new_n970 new_n971
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n428 new_n277 new_n440 new_n972
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n394 new_n292 new_n435 new_n973
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n972 new_n973 new_n974
+# NOR2_X1
+00 1
+
+.names new_n267 new_n400 new_n277 new_n413 new_n975
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n336 new_n292 new_n407 new_n976
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n975 new_n976 new_n977
+# NOR2_X1
+00 1
+
+.names new_n301 new_n974 new_n266 new_n977 new_n978
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n971 new_n978 new_n979
+# NOR2_X1
+00 1
+
+.names shift[6] new_n964 new_n388 new_n979 result[4]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n514 new_n277 new_n529 new_n981
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n725 new_n292 new_n522 new_n982
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n981 new_n982 new_n983
+# NOR2_X1
+00 1
+
+.names new_n267 new_n545 new_n277 new_n560 new_n984
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n507 new_n292 new_n553 new_n985
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n984 new_n985 new_n986
+# NOR2_X1
+00 1
+
+.names new_n266 new_n983 new_n301 new_n986 new_n987
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n577 new_n277 new_n592 new_n988
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n601 new_n292 new_n585 new_n989
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n988 new_n989 new_n990
+# NOR2_X1
+00 1
+
+.names new_n267 new_n608 new_n277 new_n623 new_n991
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n538 new_n292 new_n616 new_n992
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n991 new_n992 new_n993
+# NOR2_X1
+00 1
+
+.names new_n330 new_n990 new_n358 new_n993 new_n994
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n987 new_n994 new_n995
+# NOR2_X1
+00 1
+
+.names new_n267 new_n669 new_n277 new_n684 new_n996
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n634 new_n292 new_n677 new_n997
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n996 new_n997 new_n998
+# NOR2_X1
+00 1
+
+.names new_n267 new_n732 new_n277 new_n747 new_n999
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n662 new_n292 new_n740 new_n1000
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n999 new_n1000 new_n1001
+# NOR2_X1
+00 1
+
+.names new_n358 new_n998 new_n330 new_n1001 new_n1002
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n640 new_n277 new_n653 new_n1003
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n694 new_n292 new_n648 new_n1004
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1003 new_n1004 new_n1005
+# NOR2_X1
+00 1
+
+.names new_n267 new_n701 new_n277 new_n716 new_n1006
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n570 new_n292 new_n709 new_n1007
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1006 new_n1007 new_n1008
+# NOR2_X1
+00 1
+
+.names new_n301 new_n1005 new_n266 new_n1008 new_n1009
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1002 new_n1009 new_n1010
+# NOR2_X1
+00 1
+
+.names shift[6] new_n995 new_n388 new_n1010 result[5]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n754 new_n277 new_n757 new_n1012
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n810 new_n292 new_n756 new_n1013
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1012 new_n1013 new_n1014
+# NOR2_X1
+00 1
+
+.names new_n267 new_n761 new_n277 new_n764 new_n1015
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n753 new_n292 new_n763 new_n1016
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1015 new_n1016 new_n1017
+# NOR2_X1
+00 1
+
+.names new_n266 new_n1014 new_n301 new_n1017 new_n1018
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n769 new_n277 new_n772 new_n1019
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n775 new_n292 new_n771 new_n1020
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1019 new_n1020 new_n1021
+# NOR2_X1
+00 1
+
+.names new_n267 new_n776 new_n277 new_n779 new_n1022
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n760 new_n292 new_n778 new_n1023
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1022 new_n1023 new_n1024
+# NOR2_X1
+00 1
+
+.names new_n330 new_n1021 new_n358 new_n1024 new_n1025
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1018 new_n1025 new_n1026
+# NOR2_X1
+00 1
+
+.names new_n267 new_n796 new_n277 new_n799 new_n1027
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n786 new_n292 new_n798 new_n1028
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1027 new_n1028 new_n1029
+# NOR2_X1
+00 1
+
+.names new_n267 new_n811 new_n277 new_n814 new_n1030
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n795 new_n292 new_n813 new_n1031
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1030 new_n1031 new_n1032
+# NOR2_X1
+00 1
+
+.names new_n358 new_n1029 new_n330 new_n1032 new_n1033
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n789 new_n277 new_n792 new_n1034
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n803 new_n292 new_n791 new_n1035
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1034 new_n1035 new_n1036
+# NOR2_X1
+00 1
+
+.names new_n267 new_n804 new_n277 new_n807 new_n1037
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n768 new_n292 new_n806 new_n1038
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1037 new_n1038 new_n1039
+# NOR2_X1
+00 1
+
+.names new_n301 new_n1036 new_n266 new_n1039 new_n1040
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1033 new_n1040 new_n1041
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1026 new_n388 new_n1041 result[6]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n825 new_n277 new_n832 new_n1043
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n885 new_n292 new_n829 new_n1044
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1043 new_n1044 new_n1045
+# NOR2_X1
+00 1
+
+.names new_n267 new_n856 new_n277 new_n863 new_n1046
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n822 new_n292 new_n860 new_n1047
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1046 new_n1047 new_n1048
+# NOR2_X1
+00 1
+
+.names new_n266 new_n1045 new_n301 new_n1048 new_n1049
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n840 new_n277 new_n847 new_n1050
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n868 new_n292 new_n844 new_n1051
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1050 new_n1051 new_n1052
+# NOR2_X1
+00 1
+
+.names new_n267 new_n871 new_n277 new_n878 new_n1053
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n853 new_n292 new_n875 new_n1054
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1053 new_n1054 new_n1055
+# NOR2_X1
+00 1
+
+.names new_n330 new_n1052 new_n358 new_n1055 new_n1056
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1049 new_n1056 new_n1057
+# NOR2_X1
+00 1
+
+.names new_n267 new_n903 new_n277 new_n910 new_n1058
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n932 new_n292 new_n907 new_n1059
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1058 new_n1059 new_n1060
+# NOR2_X1
+00 1
+
+.names new_n267 new_n888 new_n277 new_n895 new_n1061
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n900 new_n292 new_n892 new_n1062
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1061 new_n1062 new_n1063
+# NOR2_X1
+00 1
+
+.names new_n358 new_n1060 new_n330 new_n1063 new_n1064
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n937 new_n285 new_n916 new_n1065
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n292 new_n941 new_n277 new_n944 new_n1066
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1065 new_n1066 new_n1067
+# NOR2_X1
+00 1
+
+.names new_n267 new_n919 new_n277 new_n926 new_n1068
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n837 new_n292 new_n923 new_n1069
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1068 new_n1069 new_n1070
+# NOR2_X1
+00 1
+
+.names new_n301 new_n1067 new_n266 new_n1070 new_n1071
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1064 new_n1071 new_n1072
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1057 new_n388 new_n1072 result[7]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n298 new_n277 new_n291 new_n1074
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n455 new_n292 new_n449 new_n1075
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1074 new_n1075 new_n1076
+# NOR2_X1
+00 1
+
+.names new_n267 new_n326 new_n277 new_n320 new_n1077
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n283 new_n285 new_n275 new_n292 new_n1078
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1077 new_n1078 new_n1079
+# NOR2_X1
+00 1
+
+.names new_n266 new_n1076 new_n301 new_n1079 new_n1080
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n355 new_n277 new_n349 new_n1081
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n370 new_n292 new_n364 new_n1082
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1081 new_n1082 new_n1083
+# NOR2_X1
+00 1
+
+.names new_n267 new_n383 new_n277 new_n377 new_n1084
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n313 new_n292 new_n307 new_n1085
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1084 new_n1085 new_n1086
+# NOR2_X1
+00 1
+
+.names new_n330 new_n1083 new_n358 new_n1086 new_n1087
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1080 new_n1087 new_n1088
+# NOR2_X1
+00 1
+
+.names new_n267 new_n495 new_n277 new_n489 new_n1089
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n428 new_n292 new_n420 new_n1090
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1089 new_n1090 new_n1091
+# NOR2_X1
+00 1
+
+.names new_n267 new_n468 new_n277 new_n462 new_n1092
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n482 new_n292 new_n476 new_n1093
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1092 new_n1093 new_n1094
+# NOR2_X1
+00 1
+
+.names new_n358 new_n1091 new_n330 new_n1094 new_n1095
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n440 new_n277 new_n435 new_n1096
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n400 new_n292 new_n394 new_n1097
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1096 new_n1097 new_n1098
+# NOR2_X1
+00 1
+
+.names new_n267 new_n413 new_n277 new_n407 new_n1099
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n342 new_n292 new_n336 new_n1100
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1099 new_n1100 new_n1101
+# NOR2_X1
+00 1
+
+.names new_n301 new_n1098 new_n266 new_n1101 new_n1102
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1095 new_n1102 new_n1103
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1088 new_n388 new_n1103 result[8]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n529 new_n277 new_n522 new_n1105
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n732 new_n292 new_n725 new_n1106
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1105 new_n1106 new_n1107
+# NOR2_X1
+00 1
+
+.names new_n267 new_n560 new_n277 new_n553 new_n1108
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n514 new_n292 new_n507 new_n1109
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1108 new_n1109 new_n1110
+# NOR2_X1
+00 1
+
+.names new_n266 new_n1107 new_n301 new_n1110 new_n1111
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n592 new_n277 new_n585 new_n1112
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n608 new_n292 new_n601 new_n1113
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1112 new_n1113 new_n1114
+# NOR2_X1
+00 1
+
+.names new_n267 new_n623 new_n277 new_n616 new_n1115
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n545 new_n292 new_n538 new_n1116
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1115 new_n1116 new_n1117
+# NOR2_X1
+00 1
+
+.names new_n330 new_n1114 new_n358 new_n1117 new_n1118
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1111 new_n1118 new_n1119
+# NOR2_X1
+00 1
+
+.names new_n267 new_n684 new_n277 new_n677 new_n1120
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n640 new_n292 new_n634 new_n1121
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1120 new_n1121 new_n1122
+# NOR2_X1
+00 1
+
+.names new_n267 new_n747 new_n277 new_n740 new_n1123
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n669 new_n292 new_n662 new_n1124
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1123 new_n1124 new_n1125
+# NOR2_X1
+00 1
+
+.names new_n358 new_n1122 new_n330 new_n1125 new_n1126
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n653 new_n277 new_n648 new_n1127
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n701 new_n292 new_n694 new_n1128
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1127 new_n1128 new_n1129
+# NOR2_X1
+00 1
+
+.names new_n267 new_n716 new_n277 new_n709 new_n1130
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n577 new_n292 new_n570 new_n1131
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1130 new_n1131 new_n1132
+# NOR2_X1
+00 1
+
+.names new_n301 new_n1129 new_n266 new_n1132 new_n1133
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1126 new_n1133 new_n1134
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1119 new_n388 new_n1134 result[9]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n757 new_n277 new_n756 new_n1136
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n811 new_n292 new_n810 new_n1137
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1136 new_n1137 new_n1138
+# NOR2_X1
+00 1
+
+.names new_n267 new_n764 new_n277 new_n763 new_n1139
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n754 new_n292 new_n753 new_n1140
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1139 new_n1140 new_n1141
+# NOR2_X1
+00 1
+
+.names new_n266 new_n1138 new_n301 new_n1141 new_n1142
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n772 new_n277 new_n771 new_n1143
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n776 new_n292 new_n775 new_n1144
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1143 new_n1144 new_n1145
+# NOR2_X1
+00 1
+
+.names new_n267 new_n779 new_n277 new_n778 new_n1146
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n761 new_n292 new_n760 new_n1147
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1146 new_n1147 new_n1148
+# NOR2_X1
+00 1
+
+.names new_n330 new_n1145 new_n358 new_n1148 new_n1149
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1142 new_n1149 new_n1150
+# NOR2_X1
+00 1
+
+.names new_n267 new_n799 new_n277 new_n798 new_n1151
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n789 new_n292 new_n786 new_n1152
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1151 new_n1152 new_n1153
+# NOR2_X1
+00 1
+
+.names new_n267 new_n814 new_n277 new_n813 new_n1154
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n796 new_n292 new_n795 new_n1155
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1154 new_n1155 new_n1156
+# NOR2_X1
+00 1
+
+.names new_n358 new_n1153 new_n330 new_n1156 new_n1157
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n792 new_n277 new_n791 new_n1158
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n804 new_n292 new_n803 new_n1159
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1158 new_n1159 new_n1160
+# NOR2_X1
+00 1
+
+.names new_n267 new_n807 new_n277 new_n806 new_n1161
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n769 new_n292 new_n768 new_n1162
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1161 new_n1162 new_n1163
+# NOR2_X1
+00 1
+
+.names new_n301 new_n1160 new_n266 new_n1163 new_n1164
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1157 new_n1164 new_n1165
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1150 new_n388 new_n1165 result[10]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n832 new_n277 new_n829 new_n1167
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n888 new_n292 new_n885 new_n1168
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1167 new_n1168 new_n1169
+# NOR2_X1
+00 1
+
+.names new_n267 new_n863 new_n277 new_n860 new_n1170
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n825 new_n292 new_n822 new_n1171
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1170 new_n1171 new_n1172
+# NOR2_X1
+00 1
+
+.names new_n266 new_n1169 new_n301 new_n1172 new_n1173
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n847 new_n277 new_n844 new_n1174
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n871 new_n292 new_n868 new_n1175
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1174 new_n1175 new_n1176
+# NOR2_X1
+00 1
+
+.names new_n267 new_n878 new_n277 new_n875 new_n1177
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n856 new_n292 new_n853 new_n1178
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1177 new_n1178 new_n1179
+# NOR2_X1
+00 1
+
+.names new_n330 new_n1176 new_n358 new_n1179 new_n1180
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1173 new_n1180 new_n1181
+# NOR2_X1
+00 1
+
+.names new_n267 new_n910 new_n277 new_n907 new_n1182
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n937 new_n292 new_n932 new_n1183
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1182 new_n1183 new_n1184
+# NOR2_X1
+00 1
+
+.names new_n267 new_n895 new_n277 new_n892 new_n1185
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n903 new_n292 new_n900 new_n1186
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1185 new_n1186 new_n1187
+# NOR2_X1
+00 1
+
+.names new_n358 new_n1184 new_n330 new_n1187 new_n1188
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n944 new_n292 new_n916 new_n1189
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n919 new_n277 new_n941 new_n1190
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1189 new_n1190 new_n1191
+# NOR2_X1
+00 1
+
+.names new_n267 new_n926 new_n277 new_n923 new_n1192
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n840 new_n292 new_n837 new_n1193
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1192 new_n1193 new_n1194
+# NOR2_X1
+00 1
+
+.names new_n301 new_n1191 new_n266 new_n1194 new_n1195
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1188 new_n1195 new_n1196
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1181 new_n388 new_n1196 result[11]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n291 new_n277 new_n449 new_n1198
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n468 new_n292 new_n455 new_n1199
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1198 new_n1199 new_n1200
+# NOR2_X1
+00 1
+
+.names new_n267 new_n320 new_n275 new_n277 new_n1201
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n298 new_n283 new_n292 new_n1202
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1201 new_n1202 new_n1203
+# NOR2_X1
+00 1
+
+.names new_n266 new_n1200 new_n301 new_n1203 new_n1204
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n349 new_n277 new_n364 new_n1205
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n383 new_n292 new_n370 new_n1206
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1205 new_n1206 new_n1207
+# NOR2_X1
+00 1
+
+.names new_n267 new_n377 new_n277 new_n307 new_n1208
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n326 new_n292 new_n313 new_n1209
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1208 new_n1209 new_n1210
+# NOR2_X1
+00 1
+
+.names new_n330 new_n1207 new_n358 new_n1210 new_n1211
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1204 new_n1211 new_n1212
+# NOR2_X1
+00 1
+
+.names new_n267 new_n489 new_n277 new_n420 new_n1213
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n440 new_n292 new_n428 new_n1214
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1213 new_n1214 new_n1215
+# NOR2_X1
+00 1
+
+.names new_n267 new_n462 new_n277 new_n476 new_n1216
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n495 new_n292 new_n482 new_n1217
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1216 new_n1217 new_n1218
+# NOR2_X1
+00 1
+
+.names new_n358 new_n1215 new_n330 new_n1218 new_n1219
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n435 new_n277 new_n394 new_n1220
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n413 new_n292 new_n400 new_n1221
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1220 new_n1221 new_n1222
+# NOR2_X1
+00 1
+
+.names new_n267 new_n407 new_n277 new_n336 new_n1223
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n355 new_n292 new_n342 new_n1224
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1223 new_n1224 new_n1225
+# NOR2_X1
+00 1
+
+.names new_n301 new_n1222 new_n266 new_n1225 new_n1226
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1219 new_n1226 new_n1227
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1212 new_n388 new_n1227 result[12]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n522 new_n277 new_n725 new_n1229
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n747 new_n292 new_n732 new_n1230
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1229 new_n1230 new_n1231
+# NOR2_X1
+00 1
+
+.names new_n267 new_n553 new_n277 new_n507 new_n1232
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n529 new_n292 new_n514 new_n1233
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1232 new_n1233 new_n1234
+# NOR2_X1
+00 1
+
+.names new_n266 new_n1231 new_n301 new_n1234 new_n1235
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n585 new_n277 new_n601 new_n1236
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n623 new_n292 new_n608 new_n1237
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1236 new_n1237 new_n1238
+# NOR2_X1
+00 1
+
+.names new_n267 new_n616 new_n277 new_n538 new_n1239
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n560 new_n292 new_n545 new_n1240
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1239 new_n1240 new_n1241
+# NOR2_X1
+00 1
+
+.names new_n330 new_n1238 new_n358 new_n1241 new_n1242
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1235 new_n1242 new_n1243
+# NOR2_X1
+00 1
+
+.names new_n267 new_n677 new_n277 new_n634 new_n1244
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n653 new_n292 new_n640 new_n1245
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1244 new_n1245 new_n1246
+# NOR2_X1
+00 1
+
+.names new_n267 new_n740 new_n277 new_n662 new_n1247
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n684 new_n292 new_n669 new_n1248
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1247 new_n1248 new_n1249
+# NOR2_X1
+00 1
+
+.names new_n358 new_n1246 new_n330 new_n1249 new_n1250
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n648 new_n277 new_n694 new_n1251
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n716 new_n292 new_n701 new_n1252
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1251 new_n1252 new_n1253
+# NOR2_X1
+00 1
+
+.names new_n267 new_n709 new_n277 new_n570 new_n1254
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n592 new_n292 new_n577 new_n1255
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1254 new_n1255 new_n1256
+# NOR2_X1
+00 1
+
+.names new_n301 new_n1253 new_n266 new_n1256 new_n1257
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1250 new_n1257 new_n1258
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1243 new_n388 new_n1258 result[13]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n756 new_n277 new_n810 new_n1260
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n814 new_n292 new_n811 new_n1261
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1260 new_n1261 new_n1262
+# NOR2_X1
+00 1
+
+.names new_n267 new_n763 new_n277 new_n753 new_n1263
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n757 new_n292 new_n754 new_n1264
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1263 new_n1264 new_n1265
+# NOR2_X1
+00 1
+
+.names new_n266 new_n1262 new_n301 new_n1265 new_n1266
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n771 new_n277 new_n775 new_n1267
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n779 new_n292 new_n776 new_n1268
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1267 new_n1268 new_n1269
+# NOR2_X1
+00 1
+
+.names new_n267 new_n778 new_n277 new_n760 new_n1270
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n764 new_n292 new_n761 new_n1271
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1270 new_n1271 new_n1272
+# NOR2_X1
+00 1
+
+.names new_n330 new_n1269 new_n358 new_n1272 new_n1273
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1266 new_n1273 new_n1274
+# NOR2_X1
+00 1
+
+.names new_n267 new_n798 new_n277 new_n786 new_n1275
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n792 new_n292 new_n789 new_n1276
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1275 new_n1276 new_n1277
+# NOR2_X1
+00 1
+
+.names new_n267 new_n813 new_n277 new_n795 new_n1278
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n799 new_n292 new_n796 new_n1279
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1278 new_n1279 new_n1280
+# NOR2_X1
+00 1
+
+.names new_n358 new_n1277 new_n330 new_n1280 new_n1281
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n791 new_n277 new_n803 new_n1282
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n807 new_n292 new_n804 new_n1283
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1282 new_n1283 new_n1284
+# NOR2_X1
+00 1
+
+.names new_n267 new_n806 new_n277 new_n768 new_n1285
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n772 new_n292 new_n769 new_n1286
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1285 new_n1286 new_n1287
+# NOR2_X1
+00 1
+
+.names new_n301 new_n1284 new_n266 new_n1287 new_n1288
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1281 new_n1288 new_n1289
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1274 new_n388 new_n1289 result[14]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n829 new_n277 new_n885 new_n1291
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n895 new_n292 new_n888 new_n1292
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1291 new_n1292 new_n1293
+# NOR2_X1
+00 1
+
+.names new_n267 new_n860 new_n277 new_n822 new_n1294
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n832 new_n292 new_n825 new_n1295
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1294 new_n1295 new_n1296
+# NOR2_X1
+00 1
+
+.names new_n266 new_n1293 new_n301 new_n1296 new_n1297
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n844 new_n277 new_n868 new_n1298
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n878 new_n292 new_n871 new_n1299
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1298 new_n1299 new_n1300
+# NOR2_X1
+00 1
+
+.names new_n267 new_n875 new_n277 new_n853 new_n1301
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n863 new_n292 new_n856 new_n1302
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1301 new_n1302 new_n1303
+# NOR2_X1
+00 1
+
+.names new_n330 new_n1300 new_n358 new_n1303 new_n1304
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1297 new_n1304 new_n1305
+# NOR2_X1
+00 1
+
+.names new_n267 new_n907 new_n277 new_n932 new_n1306
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n944 new_n292 new_n937 new_n1307
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1306 new_n1307 new_n1308
+# NOR2_X1
+00 1
+
+.names new_n267 new_n892 new_n277 new_n900 new_n1309
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n910 new_n292 new_n903 new_n1310
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1309 new_n1310 new_n1311
+# NOR2_X1
+00 1
+
+.names new_n358 new_n1308 new_n330 new_n1311 new_n1312
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n267 new_n941 new_n277 new_n916 new_n1313
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n926 new_n292 new_n919 new_n1314
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1313 new_n1314 new_n1315
+# NOR2_X1
+00 1
+
+.names new_n267 new_n923 new_n277 new_n837 new_n1316
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n285 new_n847 new_n292 new_n840 new_n1317
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1316 new_n1317 new_n1318
+# NOR2_X1
+00 1
+
+.names new_n301 new_n1315 new_n266 new_n1318 new_n1319
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1312 new_n1319 new_n1320
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1305 new_n388 new_n1320 result[15]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n470 new_n300 new_n301 new_n1322
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n385 new_n328 new_n358 new_n1323
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1322 new_n1323 new_n1324
+# NOR2_X1
+00 1
+
+.names new_n301 new_n415 new_n358 new_n442 new_n1325
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n357 new_n330 new_n497 new_n1326
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1325 new_n1326 new_n1327
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1324 new_n388 new_n1327 result[16]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n749 new_n301 new_n531 new_n1329
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n625 new_n358 new_n562 new_n1330
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1329 new_n1330 new_n1331
+# NOR2_X1
+00 1
+
+.names new_n358 new_n655 new_n330 new_n686 new_n1332
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n301 new_n718 new_n266 new_n594 new_n1333
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1332 new_n1333 new_n1334
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1331 new_n388 new_n1334 result[17]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n816 new_n301 new_n759 new_n1336
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n781 new_n358 new_n766 new_n1337
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1336 new_n1337 new_n1338
+# NOR2_X1
+00 1
+
+.names new_n358 new_n794 new_n330 new_n801 new_n1339
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n301 new_n809 new_n266 new_n774 new_n1340
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1339 new_n1340 new_n1341
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1338 new_n388 new_n1341 result[18]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n301 new_n834 new_n266 new_n897 new_n1343
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n358 new_n865 new_n330 new_n880 new_n1344
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1343 new_n1344 new_n1345
+# NOR2_X1
+00 1
+
+.names new_n330 new_n912 new_n358 new_n946 new_n1346
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n301 new_n928 new_n266 new_n849 new_n1347
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1346 new_n1347 new_n1348
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1345 new_n388 new_n1348 result[19]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n970 new_n301 new_n952 new_n1350
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n962 new_n358 new_n955 new_n1351
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1350 new_n1351 new_n1352
+# NOR2_X1
+00 1
+
+.names new_n330 new_n967 new_n301 new_n977 new_n1353
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n959 new_n358 new_n974 new_n1354
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1353 new_n1354 new_n1355
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1352 new_n388 new_n1355 result[20]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n1001 new_n301 new_n983 new_n1357
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n993 new_n358 new_n986 new_n1358
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1357 new_n1358 new_n1359
+# NOR2_X1
+00 1
+
+.names new_n330 new_n998 new_n301 new_n1008 new_n1360
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n990 new_n358 new_n1005 new_n1361
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1360 new_n1361 new_n1362
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1359 new_n388 new_n1362 result[21]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n1032 new_n301 new_n1014 new_n1364
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1024 new_n358 new_n1017 new_n1365
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1364 new_n1365 new_n1366
+# NOR2_X1
+00 1
+
+.names new_n330 new_n1029 new_n301 new_n1039 new_n1367
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n1021 new_n358 new_n1036 new_n1368
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1367 new_n1368 new_n1369
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1366 new_n388 new_n1369 result[22]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n301 new_n1045 new_n358 new_n1048 new_n1371
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1055 new_n266 new_n1063 new_n1372
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1371 new_n1372 new_n1373
+# NOR2_X1
+00 1
+
+.names new_n330 new_n1060 new_n266 new_n1052 new_n1374
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n358 new_n1067 new_n301 new_n1070 new_n1375
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1374 new_n1375 new_n1376
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1373 new_n388 new_n1376 result[23]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n301 new_n1076 new_n358 new_n1079 new_n1378
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1086 new_n266 new_n1094 new_n1379
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1378 new_n1379 new_n1380
+# NOR2_X1
+00 1
+
+.names new_n330 new_n1091 new_n266 new_n1083 new_n1381
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n358 new_n1098 new_n301 new_n1101 new_n1382
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1381 new_n1382 new_n1383
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1380 new_n388 new_n1383 result[24]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n301 new_n1107 new_n358 new_n1110 new_n1385
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1117 new_n266 new_n1125 new_n1386
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1385 new_n1386 new_n1387
+# NOR2_X1
+00 1
+
+.names new_n330 new_n1122 new_n266 new_n1114 new_n1388
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n358 new_n1129 new_n301 new_n1132 new_n1389
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1388 new_n1389 new_n1390
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1387 new_n388 new_n1390 result[25]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n1156 new_n301 new_n1138 new_n1392
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1148 new_n358 new_n1141 new_n1393
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1392 new_n1393 new_n1394
+# NOR2_X1
+00 1
+
+.names new_n330 new_n1153 new_n266 new_n1145 new_n1395
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n358 new_n1160 new_n301 new_n1163 new_n1396
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1395 new_n1396 new_n1397
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1394 new_n388 new_n1397 result[26]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n1187 new_n301 new_n1169 new_n1399
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1179 new_n358 new_n1172 new_n1400
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1399 new_n1400 new_n1401
+# NOR2_X1
+00 1
+
+.names new_n330 new_n1184 new_n266 new_n1176 new_n1402
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n358 new_n1191 new_n301 new_n1194 new_n1403
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1402 new_n1403 new_n1404
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1401 new_n388 new_n1404 result[27]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n1218 new_n301 new_n1200 new_n1406
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1210 new_n358 new_n1203 new_n1407
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1406 new_n1407 new_n1408
+# NOR2_X1
+00 1
+
+.names new_n330 new_n1215 new_n266 new_n1207 new_n1409
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n358 new_n1222 new_n301 new_n1225 new_n1410
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1409 new_n1410 new_n1411
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1408 new_n388 new_n1411 result[28]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n1249 new_n301 new_n1231 new_n1413
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1241 new_n358 new_n1234 new_n1414
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1413 new_n1414 new_n1415
+# NOR2_X1
+00 1
+
+.names new_n330 new_n1246 new_n266 new_n1238 new_n1416
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n358 new_n1253 new_n301 new_n1256 new_n1417
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1416 new_n1417 new_n1418
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1415 new_n388 new_n1418 result[29]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n1280 new_n301 new_n1262 new_n1420
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1272 new_n358 new_n1265 new_n1421
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1420 new_n1421 new_n1422
+# NOR2_X1
+00 1
+
+.names new_n330 new_n1277 new_n266 new_n1269 new_n1423
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n358 new_n1284 new_n301 new_n1287 new_n1424
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1423 new_n1424 new_n1425
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1422 new_n388 new_n1425 result[30]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n1311 new_n301 new_n1293 new_n1427
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1303 new_n358 new_n1296 new_n1428
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1427 new_n1428 new_n1429
+# NOR2_X1
+00 1
+
+.names new_n330 new_n1308 new_n266 new_n1300 new_n1430
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n358 new_n1315 new_n301 new_n1318 new_n1431
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1430 new_n1431 new_n1432
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1429 new_n388 new_n1432 result[31]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n497 new_n301 new_n470 new_n1434
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n328 new_n330 new_n300 new_n358 new_n1435
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1434 new_n1435 new_n1436
+# NOR2_X1
+00 1
+
+.names new_n358 new_n415 new_n330 new_n442 new_n1437
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n301 new_n357 new_n266 new_n385 new_n1438
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1437 new_n1438 new_n1439
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1436 new_n388 new_n1439 result[32]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n686 new_n301 new_n749 new_n1441
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n562 new_n358 new_n531 new_n1442
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1441 new_n1442 new_n1443
+# NOR2_X1
+00 1
+
+.names new_n330 new_n655 new_n266 new_n625 new_n1444
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n358 new_n718 new_n301 new_n594 new_n1445
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1444 new_n1445 new_n1446
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1443 new_n388 new_n1446 result[33]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n801 new_n301 new_n816 new_n1448
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n766 new_n358 new_n759 new_n1449
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1448 new_n1449 new_n1450
+# NOR2_X1
+00 1
+
+.names new_n330 new_n794 new_n266 new_n781 new_n1451
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n358 new_n809 new_n301 new_n774 new_n1452
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1451 new_n1452 new_n1453
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1450 new_n388 new_n1453 result[34]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n358 new_n834 new_n301 new_n897 new_n1455
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n865 new_n266 new_n912 new_n1456
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1455 new_n1456 new_n1457
+# NOR2_X1
+00 1
+
+.names new_n330 new_n946 new_n301 new_n849 new_n1458
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n358 new_n928 new_n266 new_n880 new_n1459
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1458 new_n1459 new_n1460
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1457 new_n388 new_n1460 result[35]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n967 new_n301 new_n970 new_n1462
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n955 new_n358 new_n952 new_n1463
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1462 new_n1463 new_n1464
+# NOR2_X1
+00 1
+
+.names new_n358 new_n977 new_n330 new_n974 new_n1465
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n301 new_n959 new_n266 new_n962 new_n1466
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1465 new_n1466 new_n1467
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1464 new_n388 new_n1467 result[36]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n998 new_n301 new_n1001 new_n1469
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n986 new_n358 new_n983 new_n1470
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1469 new_n1470 new_n1471
+# NOR2_X1
+00 1
+
+.names new_n358 new_n1008 new_n330 new_n1005 new_n1472
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n301 new_n990 new_n266 new_n993 new_n1473
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1472 new_n1473 new_n1474
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1471 new_n388 new_n1474 result[37]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n1029 new_n301 new_n1032 new_n1476
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1017 new_n358 new_n1014 new_n1477
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1476 new_n1477 new_n1478
+# NOR2_X1
+00 1
+
+.names new_n358 new_n1039 new_n330 new_n1036 new_n1479
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n301 new_n1021 new_n266 new_n1024 new_n1480
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1479 new_n1480 new_n1481
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1478 new_n388 new_n1481 result[38]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n358 new_n1045 new_n330 new_n1048 new_n1483
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n301 new_n1063 new_n266 new_n1060 new_n1484
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1483 new_n1484 new_n1485
+# NOR2_X1
+00 1
+
+.names new_n266 new_n1055 new_n301 new_n1052 new_n1486
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1067 new_n358 new_n1070 new_n1487
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1486 new_n1487 new_n1488
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1485 new_n388 new_n1488 result[39]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n358 new_n1076 new_n330 new_n1079 new_n1490
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n301 new_n1094 new_n266 new_n1091 new_n1491
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1490 new_n1491 new_n1492
+# NOR2_X1
+00 1
+
+.names new_n266 new_n1086 new_n301 new_n1083 new_n1493
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1098 new_n358 new_n1101 new_n1494
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1493 new_n1494 new_n1495
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1492 new_n388 new_n1495 result[40]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n358 new_n1107 new_n330 new_n1110 new_n1497
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n301 new_n1125 new_n266 new_n1122 new_n1498
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1497 new_n1498 new_n1499
+# NOR2_X1
+00 1
+
+.names new_n266 new_n1117 new_n301 new_n1114 new_n1500
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1129 new_n358 new_n1132 new_n1501
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1500 new_n1501 new_n1502
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1499 new_n388 new_n1502 result[41]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n1153 new_n301 new_n1156 new_n1504
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1141 new_n358 new_n1138 new_n1505
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1504 new_n1505 new_n1506
+# NOR2_X1
+00 1
+
+.names new_n266 new_n1148 new_n301 new_n1145 new_n1507
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1160 new_n358 new_n1163 new_n1508
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1507 new_n1508 new_n1509
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1506 new_n388 new_n1509 result[42]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n1184 new_n301 new_n1187 new_n1511
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1172 new_n358 new_n1169 new_n1512
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1511 new_n1512 new_n1513
+# NOR2_X1
+00 1
+
+.names new_n266 new_n1179 new_n301 new_n1176 new_n1514
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1191 new_n358 new_n1194 new_n1515
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1514 new_n1515 new_n1516
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1513 new_n388 new_n1516 result[43]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n1215 new_n301 new_n1218 new_n1518
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1203 new_n358 new_n1200 new_n1519
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1518 new_n1519 new_n1520
+# NOR2_X1
+00 1
+
+.names new_n266 new_n1210 new_n301 new_n1207 new_n1521
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1222 new_n358 new_n1225 new_n1522
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1521 new_n1522 new_n1523
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1520 new_n388 new_n1523 result[44]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n1246 new_n301 new_n1249 new_n1525
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1234 new_n358 new_n1231 new_n1526
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1525 new_n1526 new_n1527
+# NOR2_X1
+00 1
+
+.names new_n266 new_n1241 new_n301 new_n1238 new_n1528
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1253 new_n358 new_n1256 new_n1529
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1528 new_n1529 new_n1530
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1527 new_n388 new_n1530 result[45]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n1277 new_n301 new_n1280 new_n1532
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1265 new_n358 new_n1262 new_n1533
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1532 new_n1533 new_n1534
+# NOR2_X1
+00 1
+
+.names new_n266 new_n1272 new_n301 new_n1269 new_n1535
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1284 new_n358 new_n1287 new_n1536
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1535 new_n1536 new_n1537
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1534 new_n388 new_n1537 result[46]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n1308 new_n301 new_n1311 new_n1539
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1296 new_n358 new_n1293 new_n1540
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1539 new_n1540 new_n1541
+# NOR2_X1
+00 1
+
+.names new_n266 new_n1303 new_n301 new_n1300 new_n1542
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1315 new_n358 new_n1318 new_n1543
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1542 new_n1543 new_n1544
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1541 new_n388 new_n1544 result[47]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n442 new_n301 new_n497 new_n1546
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n300 new_n330 new_n358 new_n470 new_n1547
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1546 new_n1547 new_n1548
+# NOR2_X1
+00 1
+
+.names new_n330 new_n415 new_n266 new_n328 new_n1549
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n357 new_n358 new_n301 new_n385 new_n1550
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1549 new_n1550 new_n1551
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1548 new_n388 new_n1551 result[48]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n655 new_n301 new_n686 new_n1553
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n531 new_n358 new_n749 new_n1554
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1553 new_n1554 new_n1555
+# NOR2_X1
+00 1
+
+.names new_n266 new_n562 new_n301 new_n625 new_n1556
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n718 new_n358 new_n594 new_n1557
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1556 new_n1557 new_n1558
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1555 new_n388 new_n1558 result[49]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n794 new_n301 new_n801 new_n1560
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n759 new_n358 new_n816 new_n1561
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1560 new_n1561 new_n1562
+# NOR2_X1
+00 1
+
+.names new_n266 new_n766 new_n301 new_n781 new_n1563
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n809 new_n358 new_n774 new_n1564
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1563 new_n1564 new_n1565
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1562 new_n388 new_n1565 result[50]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n834 new_n358 new_n897 new_n1567
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n946 new_n301 new_n912 new_n1568
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1567 new_n1568 new_n1569
+# NOR2_X1
+00 1
+
+.names new_n358 new_n849 new_n301 new_n880 new_n1570
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n928 new_n266 new_n865 new_n1571
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1570 new_n1571 new_n1572
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1569 new_n388 new_n1572 result[51]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n301 new_n967 new_n358 new_n970 new_n1574
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n974 new_n330 new_n952 new_n1575
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1574 new_n1575 new_n1576
+# NOR2_X1
+00 1
+
+.names new_n266 new_n955 new_n330 new_n977 new_n1577
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n358 new_n959 new_n301 new_n962 new_n1578
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1577 new_n1578 new_n1579
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1576 new_n388 new_n1579 result[52]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n301 new_n998 new_n358 new_n1001 new_n1581
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n1005 new_n330 new_n983 new_n1582
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1581 new_n1582 new_n1583
+# NOR2_X1
+00 1
+
+.names new_n266 new_n986 new_n330 new_n1008 new_n1584
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n358 new_n990 new_n301 new_n993 new_n1585
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1584 new_n1585 new_n1586
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1583 new_n388 new_n1586 result[53]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n301 new_n1029 new_n358 new_n1032 new_n1588
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n1036 new_n330 new_n1014 new_n1589
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1588 new_n1589 new_n1590
+# NOR2_X1
+00 1
+
+.names new_n266 new_n1017 new_n330 new_n1039 new_n1591
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n358 new_n1021 new_n301 new_n1024 new_n1592
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1591 new_n1592 new_n1593
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1590 new_n388 new_n1593 result[54]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1045 new_n301 new_n1060 new_n1595
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n1067 new_n358 new_n1063 new_n1596
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1595 new_n1596 new_n1597
+# NOR2_X1
+00 1
+
+.names new_n266 new_n1048 new_n301 new_n1055 new_n1598
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1070 new_n358 new_n1052 new_n1599
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1598 new_n1599 new_n1600
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1597 new_n388 new_n1600 result[55]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1076 new_n301 new_n1091 new_n1602
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n1098 new_n358 new_n1094 new_n1603
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1602 new_n1603 new_n1604
+# NOR2_X1
+00 1
+
+.names new_n266 new_n1079 new_n301 new_n1086 new_n1605
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1101 new_n358 new_n1083 new_n1606
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1605 new_n1606 new_n1607
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1604 new_n388 new_n1607 result[56]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1107 new_n301 new_n1122 new_n1609
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n1129 new_n358 new_n1125 new_n1610
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1609 new_n1610 new_n1611
+# NOR2_X1
+00 1
+
+.names new_n266 new_n1110 new_n301 new_n1117 new_n1612
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1132 new_n358 new_n1114 new_n1613
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1612 new_n1613 new_n1614
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1611 new_n388 new_n1614 result[57]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n301 new_n1153 new_n358 new_n1156 new_n1616
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n1160 new_n330 new_n1138 new_n1617
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1616 new_n1617 new_n1618
+# NOR2_X1
+00 1
+
+.names new_n266 new_n1141 new_n301 new_n1148 new_n1619
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1163 new_n358 new_n1145 new_n1620
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1619 new_n1620 new_n1621
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1618 new_n388 new_n1621 result[58]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n301 new_n1184 new_n358 new_n1187 new_n1623
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n1191 new_n330 new_n1169 new_n1624
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1623 new_n1624 new_n1625
+# NOR2_X1
+00 1
+
+.names new_n266 new_n1172 new_n301 new_n1179 new_n1626
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1194 new_n358 new_n1176 new_n1627
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1626 new_n1627 new_n1628
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1625 new_n388 new_n1628 result[59]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n301 new_n1215 new_n358 new_n1218 new_n1630
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n1222 new_n330 new_n1200 new_n1631
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1630 new_n1631 new_n1632
+# NOR2_X1
+00 1
+
+.names new_n266 new_n1203 new_n301 new_n1210 new_n1633
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1225 new_n358 new_n1207 new_n1634
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1633 new_n1634 new_n1635
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1632 new_n388 new_n1635 result[60]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n301 new_n1246 new_n358 new_n1249 new_n1637
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n1253 new_n330 new_n1231 new_n1638
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1637 new_n1638 new_n1639
+# NOR2_X1
+00 1
+
+.names new_n266 new_n1234 new_n301 new_n1241 new_n1640
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1256 new_n358 new_n1238 new_n1641
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1640 new_n1641 new_n1642
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1639 new_n388 new_n1642 result[61]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n301 new_n1277 new_n358 new_n1280 new_n1644
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n1284 new_n330 new_n1262 new_n1645
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1644 new_n1645 new_n1646
+# NOR2_X1
+00 1
+
+.names new_n266 new_n1265 new_n301 new_n1272 new_n1647
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1287 new_n358 new_n1269 new_n1648
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1647 new_n1648 new_n1649
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1646 new_n388 new_n1649 result[62]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n301 new_n1308 new_n358 new_n1311 new_n1651
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n266 new_n1315 new_n330 new_n1293 new_n1652
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1651 new_n1652 new_n1653
+# NOR2_X1
+00 1
+
+.names new_n266 new_n1296 new_n301 new_n1303 new_n1654
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n330 new_n1318 new_n358 new_n1300 new_n1655
+# OAI22_X1
+--00 1
+00-- 1
+
+.names new_n1654 new_n1655 new_n1656
+# NOR2_X1
+00 1
+
+.names shift[6] new_n1653 new_n388 new_n1656 result[63]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n499 new_n388 new_n387 result[64]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n751 new_n388 new_n627 result[65]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n818 new_n388 new_n783 result[66]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n948 new_n388 new_n882 result[67]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n979 new_n388 new_n964 result[68]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1010 new_n388 new_n995 result[69]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1041 new_n388 new_n1026 result[70]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1072 new_n388 new_n1057 result[71]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1103 new_n388 new_n1088 result[72]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1134 new_n388 new_n1119 result[73]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1165 new_n388 new_n1150 result[74]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1196 new_n388 new_n1181 result[75]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1227 new_n388 new_n1212 result[76]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1258 new_n388 new_n1243 result[77]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1289 new_n388 new_n1274 result[78]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1320 new_n388 new_n1305 result[79]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1327 new_n388 new_n1324 result[80]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1334 new_n388 new_n1331 result[81]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1341 new_n388 new_n1338 result[82]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1348 new_n388 new_n1345 result[83]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1355 new_n388 new_n1352 result[84]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1362 new_n388 new_n1359 result[85]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1369 new_n388 new_n1366 result[86]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1376 new_n388 new_n1373 result[87]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1383 new_n388 new_n1380 result[88]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1390 new_n388 new_n1387 result[89]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1397 new_n388 new_n1394 result[90]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1404 new_n388 new_n1401 result[91]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1411 new_n388 new_n1408 result[92]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1418 new_n388 new_n1415 result[93]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1425 new_n388 new_n1422 result[94]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1432 new_n388 new_n1429 result[95]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1439 new_n388 new_n1436 result[96]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1446 new_n388 new_n1443 result[97]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1453 new_n388 new_n1450 result[98]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1460 new_n388 new_n1457 result[99]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1467 new_n388 new_n1464 result[100]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1474 new_n388 new_n1471 result[101]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1481 new_n388 new_n1478 result[102]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1488 new_n388 new_n1485 result[103]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1495 new_n388 new_n1492 result[104]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1502 new_n388 new_n1499 result[105]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1509 new_n388 new_n1506 result[106]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1516 new_n388 new_n1513 result[107]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1523 new_n388 new_n1520 result[108]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1530 new_n388 new_n1527 result[109]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1537 new_n388 new_n1534 result[110]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1544 new_n388 new_n1541 result[111]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1551 new_n388 new_n1548 result[112]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1558 new_n388 new_n1555 result[113]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1565 new_n388 new_n1562 result[114]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1572 new_n388 new_n1569 result[115]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1579 new_n388 new_n1576 result[116]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1586 new_n388 new_n1583 result[117]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1593 new_n388 new_n1590 result[118]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1600 new_n388 new_n1597 result[119]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1607 new_n388 new_n1604 result[120]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1614 new_n388 new_n1611 result[121]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1621 new_n388 new_n1618 result[122]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1628 new_n388 new_n1625 result[123]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1635 new_n388 new_n1632 result[124]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1642 new_n388 new_n1639 result[125]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1649 new_n388 new_n1646 result[126]
+# OAI22_X1
+--00 1
+00-- 1
+
+.names shift[6] new_n1656 new_n388 new_n1653 result[127]
+# OAI22_X1
+--00 1
+00-- 1
+
+.end

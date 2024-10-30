@@ -24,9 +24,16 @@
 *.lai
 *.la
 *.a
-*.lib
+# *.lib
 
 # Executables
 *.exe
 *.out
 *.app
+
+# Others
+build/
+tmp/
+abc.history
+rarels_aig_synthesis
+rarels_map
