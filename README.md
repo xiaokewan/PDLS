@@ -4,7 +4,7 @@ RareLS: Rarity-Reducing Logic Synthesis for Mitigating Hardware Trojan Threats
 RareLS is used to reduce the number of rare signals in logic circuit to protect the circuit from hardware trojan attacks.
 RareLS makes it harder for attackers to insert hardware trojans and makes it easier for defenders to detect hardware trojans.
 RareLS's overall flow is shown below:
-<img src="fig/rarels.jpg" alt="flow" style="zoom: 100%;" />
+<img src="fig/rarels_flow.jpg" alt="flow" style="zoom: 100%;" />
 
 For more details, you can refer to the following paper:
 [Chang Meng, Mingfei Yu, Hanyu Wang, Wayne Burleson, and Giovanni De Micheli, "*RareLS: Rarity-Reducing Logic Synthesis for Mitigating Hardware Trojan Threats*," in International Conference on Computer-Aided Design (ICCAD), New Jersay, USA, 2024.](paper/ICCAD_2024_RareLS__Rare_Reducing_Logic_Synthesis_for_Mitigating_Hardware_Trojan_Threats.pdf)
