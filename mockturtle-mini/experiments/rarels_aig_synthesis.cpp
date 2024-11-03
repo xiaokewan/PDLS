@@ -87,7 +87,12 @@ public:
     mockturtle::experimental::cost_generic_resub_params ps; 
     mockturtle::experimental::cost_generic_resub_stats st;
 
-    explicit TechnologyIndependentOptimizer() = default;
+    explicit TechnologyIndependentOptimizer(double rarityThreshold) {
+        costRare.set_rarity_threshold(rarityThreshold);
+        costRareLongPattern.set_rarity_threshold(rarityThreshold);
+        costUnhiddenRare.set_rarity_threshold(rarityThreshold);
+        costUnhiddenRareLongPattern.set_rarity_threshold(rarityThreshold);
+    }
     ~TechnologyIndependentOptimizer() = default;
     TechnologyIndependentOptimizer(const TechnologyIndependentOptimizer &) = default;
     TechnologyIndependentOptimizer(TechnologyIndependentOptimizer &&) = default;
@@ -187,16 +192,17 @@ public:
 
             aig = bestAig;
             if (useUnhiddenRare)
-                PrintCosts(aig, "Anysyn for #unhidden rare: ");
+                PrintCosts(aig, "Rarity-reducing AIG for #unhidden rare: ");
             else
-                PrintCosts(aig, "Anysyn for #rare: ");
-            std::string output_filename = fmt::format( "{}_{}.blif", baseName, "anysyn" );
+                PrintCosts(aig, "Rarity-reducing AIG for #rare: ");
+            std::string output_filename = fmt::format( "{}_{}.blif", baseName, "rarity_reduced_aig" );
+            fmt::print( "[i] writing to {}\n", output_filename );
             write_blif( aig, output_filename );
         } );
         if (useUnhiddenRare)
-            fmt::print( "[i] Anysyn for #unhidden rare runtime: {:5.2f} seconds\n", to_seconds( time_tot ) );
+            fmt::print( "[i] Rarity-reducing AIG for #unhidden rare runtime: {:5.2f} seconds\n", to_seconds( time_tot ) );
         else
-            fmt::print( "[i] Anysyn for #rare runtime: {:5.2f} seconds\n", to_seconds( time_tot ) );
+            fmt::print( "[i] Rarity-reducing AIG for #rare runtime: {:5.2f} seconds\n", to_seconds( time_tot ) );
     }
 };
 
@@ -210,22 +216,25 @@ void CreatePath(const std::string & _path) {
 
 int main(int argc, char ** argv) {
     /* parse arguments */
-    if (argc != 2) {
-        fmt::print( "[e] need one argument, please specify input circuit path (in AIG)\n" );
+    if (argc != 3) {
+        fmt::print( "[e] need two arguments, please specify input circuit path and rarity threshold, separated by a white space\n" );
         return 0;
     }
     std::string benchmark = argv[1];
+    double rarityThreshold = std::stod(argv[2]);
     fmt::print( "[i] processing {}\n", benchmark );
+    fmt::print( "[i] rarity threshold: {}\n", rarityThreshold );
 
     /* create directories */
-    CreatePath("./result/tmp/");
     CreatePath("./tmp/");
 
     /* deal with output name */
-    TechnologyIndependentOptimizer optimizer;
+    TechnologyIndependentOptimizer optimizer(rarityThreshold);
     std::string circuitName = benchmark.substr( benchmark.find_last_of( '/' ) + 1, benchmark.find_last_of( '.' ) - benchmark.find_last_of( '/' ) - 1 );
-    optimizer.baseName = "./result/tmp/" + circuitName;
-    optimizer.tempFileBaseName = "./tmp/" + circuitName + "_tmp";
+    optimizer.baseName = "./tmp/" + circuitName;
+    if (optimizer.baseName.find("_init") != std::string::npos)
+        optimizer.baseName = optimizer.baseName.substr(0, optimizer.baseName.find("_init"));
+    optimizer.tempFileBaseName = optimizer.baseName + "_tmp";
     fmt::print( "[i] output base name: {}\n", optimizer.baseName );
 
     /* read benchmark */
@@ -243,18 +252,7 @@ int main(int argc, char ** argv) {
     optimizer.ps.rps.max_solutions = 0; /* = 1: collect one, = 0: collect all */
 
     /* AIG cost before optimization */
-    optimizer.PrintCosts(aig, "Original");
-
-    /* pre-processing */
-    // optimizer.PreProcess(aig);
-
-    /* baseline method: compress2rs x2 */
-    // optimizer.BaselineMethod(aig); 
-
-    /* anysyn: use #rare signals as cost function */
-    // optimizer.AnysynForRareSignal(aig, false);
-    
-    /* anysyn: use unhidden #rare signals as cost function */
+    optimizer.PrintCosts(aig, "Original AIG (converted from pre-processed gate netlist)");
 
     stopwatch<>::duration time_tot{ 0 };
     call_with_stopwatch( time_tot, [&]() {
@@ -262,7 +260,7 @@ int main(int argc, char ** argv) {
     optimizer.AnysynForRareSignal(aig, true);
     optimizer.AnysynForRareSignal(aig, true);
     } );
-    fmt::print( "[i] Anysyn runtime: {:5.2f} seconds\n", to_seconds( time_tot ) );
+    fmt::print( "[i] Rarity-reducing AIG synthesis runtime: {:5.2f} seconds\n", to_seconds( time_tot ) );
 
     return 0;
 }

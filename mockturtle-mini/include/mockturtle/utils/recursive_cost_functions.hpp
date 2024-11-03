@@ -275,18 +275,24 @@ public:
   }
 };
 
-// const double RARITY_THRESHOLD = 0.05;
-const double RARITY_THRESHOLD = 0.1;
-// const double RARITY_THRESHOLD = 0.15;
-// const double RARITY_THRESHOLD = 0.2;
-// const double RARITY_THRESHOLD = 0.25;
+
 template<class Ntk, int SimulationLength>
 struct xag_rare_signal_cost {
 public:
   using ull = unsigned long;
   using context_t = std::pair< boost::dynamic_bitset<ull>, uint32_t >; // first: simulation vector, second: the cost contribution to the total cost
-  const int LOWER_THRESHOLD = (int)((double)(SimulationLength) * RARITY_THRESHOLD);
-  const int UPPER_THRESHOLD = SimulationLength - LOWER_THRESHOLD;
+  double RARITY_THRESHOLD;
+  int LOWER_THRESHOLD;
+  int UPPER_THRESHOLD;
+
+  xag_rare_signal_cost(double rarity_threshold = 0.1): 
+    RARITY_THRESHOLD(rarity_threshold), LOWER_THRESHOLD((int)((double)(SimulationLength) * RARITY_THRESHOLD)), UPPER_THRESHOLD(SimulationLength - LOWER_THRESHOLD) {};
+
+  void set_rarity_threshold(double rarity_threshold) {
+    RARITY_THRESHOLD = rarity_threshold;
+    LOWER_THRESHOLD = (int)((double)(SimulationLength) * RARITY_THRESHOLD);
+    UPPER_THRESHOLD = SimulationLength - LOWER_THRESHOLD;
+  }
 
   // priority in the balancing: if c2 has lower depth than c1 return true
   // Example: context_compare(c1, c2) {return c1.depth > c2.depth}
@@ -343,8 +349,17 @@ struct xag_unhidden_rare_signal_cost {
 public:
   using ull = unsigned long;
   using context_t = std::tuple< boost::dynamic_bitset<ull>, uint32_t, uint32_t >; // (simulationVector, isRareSignal, isUnhiddenRareSignal)
-  const int LOWER_THRESHOLD = (int)((double)(SimulationLength) * RARITY_THRESHOLD);
-  const int UPPER_THRESHOLD = SimulationLength - LOWER_THRESHOLD;
+  double RARITY_THRESHOLD;
+  int LOWER_THRESHOLD;
+  int UPPER_THRESHOLD;
+
+  xag_unhidden_rare_signal_cost(double rarity_threshold = 0.1): RARITY_THRESHOLD(rarity_threshold), LOWER_THRESHOLD((int)((double)(SimulationLength) * RARITY_THRESHOLD)), UPPER_THRESHOLD(SimulationLength - LOWER_THRESHOLD) {};
+
+  void set_rarity_threshold(double rarity_threshold) {
+    RARITY_THRESHOLD = rarity_threshold;
+    LOWER_THRESHOLD = (int)((double)(SimulationLength) * RARITY_THRESHOLD);
+    UPPER_THRESHOLD = SimulationLength - LOWER_THRESHOLD;
+  }
 
   static bool context_compare( const context_t& c1, const context_t& c2 ) {
     return std::get<1>(c1) > std::get<1>(c2);

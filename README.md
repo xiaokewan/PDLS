@@ -73,16 +73,22 @@ If you compile successfully, you will obtain the following two executable progra
 
 ## Execute
 
-Examples:
+Examples
+
+To perform step 2, rarity-reducing AIG synthesis, an example command is:
 
 ```shell
-./rarels_aig_synthesis input/benchmark/abc-optimized/c0499_init.aig 
+./rarels_aig_synthesis input/benchmark/abc-optimized/c0880_init.aig 0.1
 ```
+where c0880 is the initial AIG file (converted from the optimized initial gate-netlist),
+and 0.1 is the rarity threshold.
+This command takes c0880_init.aig as the input AIG, reduce the number of rare signals in the AIG.
+The rarity-reduced AIG will be saved into ./tmp/c0880_rarity_reduced_aig.blif
 
-This command takes c0499_init.aig as the input AIG, reduce the number of rare signals in the AIG
 
+To perform step 3, rarity-reducing technology mapping, an example command is: 
 ```shell
-./rarels_map --rareSignalThreshold 0.1 --inputBlif ./input/benchmark/abc-optimized/c0499_init.blif
+./rarels_map --rareSignalThreshold 0.1 --inputBlif ./tmp/c0880_rarity_reduced_aig.blif
 ```
-
-This command takes an optimized AIG c0499_init.blif as input, and then performs rarity-reducing technology mapping.
+This command takes the rarity-reducing AIG ./tmp/c0880_rarity_reduced_aig.blif as input (from step 2),
+and then performs rarity-reducing technology mapping.

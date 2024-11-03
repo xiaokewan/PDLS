@@ -52,24 +52,24 @@ void RareMapMan::SecurityAwareApproximateLogicSynthesis() {
     // currNet.WriteBlif(outpPath + "/sop.blif");
     // currNet.WriteDot(outpPath + "/sop.dot", &signalProbabilities, rareSignalThreshold);
 
-    // amap
-    cout << "**************************************** applying amap" << endl;
-    amapResultNet.Comm("st; ps; amap; topo; stime;");
-    int nRareSignals = CollectSignalProbabilities(amapResultNet, signalProbabilities, true);
-    cout << "area, delay, #rare =\t" << amapResultNet.GetArea() << "\t" << amapResultNet.GetDelay() << "\t\t" << nRareSignals << endl;
-    // amapResultNet.WriteBlif(outpPath + "amap_sop.blif");
-    // amapResultNet.WriteNet(outpPath + "amap_gate.v");
-    amapResultNet.Comm("ps -p");
-    // amapResultNet.WriteDot(outpPath + "/amap.dot", &signalProbabilities, rareSignalThreshold);
-    // cout << "****************************************" << endl;
+    // // amap
+    // cout << "**************************************** applying amap" << endl;
+    // amapResultNet.Comm("st; ps; amap; topo; stime;");
+    // int nRareSignals = CollectSignalProbabilities(amapResultNet, signalProbabilities, true);
+    // cout << "area, delay, #rare =\t" << amapResultNet.GetArea() << "\t" << amapResultNet.GetDelay() << "\t\t" << nRareSignals << endl;
+    // // amapResultNet.WriteBlif(outpPath + "amap_sop.blif");
+    // // amapResultNet.WriteNet(outpPath + "amap_gate.v");
+    // amapResultNet.Comm("ps -p");
+    // // amapResultNet.WriteDot(outpPath + "/amap.dot", &signalProbabilities, rareSignalThreshold);
+    // // cout << "****************************************" << endl;
 
     // security-aware area-oriented technology mapping
-    cout << "**************************************** applying security-aware area-oriented technology mapping" << endl;
+    cout << "**************************************** applying rarity-reducing area-oriented technology mapping" << endl;
     Security_Amap(htResistantMapNet);
     AbcMan abc;
     abc.Comm("topo; stime");
     htResistantMapNet = NetMan(abc.GetNet(), true);
-    nRareSignals = CollectSignalProbabilities(htResistantMapNet, signalProbabilities, true);
+    int nRareSignals = CollectSignalProbabilities(htResistantMapNet, signalProbabilities, true);
     cout << "area, delay, #rare =\t" << htResistantMapNet.GetArea() << "\t" << htResistantMapNet.GetDelay() << "\t\t" << nRareSignals << endl;
     htResistantMapNet.WriteBlif(outpPath + "hideamap_sop.blif");
     htResistantMapNet.WriteNet(outpPath + "hideamap_gate.blif");
