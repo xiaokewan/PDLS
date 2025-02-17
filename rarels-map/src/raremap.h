@@ -6,13 +6,12 @@
 #include "simulator.h"
 
 
-struct ALSOpt {
+struct RareMapOpt {
     bool isSign = false;
     bool useAppDisjCut = false;
     unsigned sourceSeed = 314;
     ll nFrame = 100032;
     ll nThread = 4;
-    // ll truncBit = 0;
     double errUppBound = 7.0;
     double rareSignalThreshold = 0.02;
     abc::Abc_Ntk_t * pNtk = nullptr;
@@ -48,7 +47,7 @@ private:
     RareMapMan & operator = (RareMapMan &&);
 
 public:
-    explicit RareMapMan(ALSOpt & opt);
+    explicit RareMapMan(RareMapOpt & opt);
     ~RareMapMan() = default;
     void SecurityAwareApproximateLogicSynthesis();
     void DetectRareSignals(NetMan& net, std::vector<ll> & rareSignals, double rareThreshold = 0.001);

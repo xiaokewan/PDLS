@@ -1,7 +1,7 @@
 #include "cmdline.hpp"
 #include "header.h"
 #include "my_abc.h"
-#include "als.h"
+#include "raremap.h"
 
 
 using namespace abc;
@@ -13,7 +13,6 @@ using namespace std;
 parser CommPars(int argc, char * argv[]) {
     parser option;
     option.add <string> ("inputBlif", '\0', "path to accurate circuit", false, "./input/benchmark/bacs/mult8.blif");
-    // option.add <string> ("appCirc", '\0', "path to approximate circuit", false, "");
     option.add <string> ("standCell", '\0', "path to standard cell library", false, "./input/standard-cell/nangate_45nm_typ.lib");
     option.add <string> ("outpPath", '\0', "path to approximate circuits", false, "tmp");
     option.add <unsigned> ("seed", '\0', "seed for randomness", false, 0);
@@ -25,7 +24,7 @@ parser CommPars(int argc, char * argv[]) {
 }
 
 
-void RareMap(ALSOpt & configurations) {
+void RareMap(RareMapOpt & configurations) {
     RareMapMan RareMapMan(configurations);
     RareMapMan.SecurityAwareApproximateLogicSynthesis();
 }
@@ -35,7 +34,7 @@ int main(int argc, char * argv[]) {
     GlobStartAbc();
 
     parser option = CommPars(argc, argv);
-    ALSOpt configurations;
+    RareMapOpt configurations;
     string inputBlif = option.get <string> ("inputBlif");
     string standCell = option.get <string> ("standCell");
     configurations.outpPath = option.get <string> ("outpPath");

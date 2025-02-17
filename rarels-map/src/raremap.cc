@@ -1,4 +1,4 @@
-#include "als.h"
+#include "raremap.h"
 
 
 using namespace std;
@@ -6,21 +6,17 @@ using namespace abc;
 using namespace boost;
 
 
-void ALSOpt::Print() {
+void RareMapOpt::Print() {
     cout << "***** options" << endl;
-    cout << (isSign? "use signed output": "use unsigned output") << endl;
-    cout << "useAppDisjCut = " << useAppDisjCut << endl;
     cout << "source seed = " << sourceSeed << endl;
     cout << "#simulation patterns = " << nFrame << endl;
-    cout << "number of threads = " << nThread << endl;
     cout << "output path: " << outpPath << endl;
 }
 
 
-RareMapMan::RareMapMan(ALSOpt & opt): 
+RareMapMan::RareMapMan(RareMapOpt & opt): 
     sourceSeed(opt.sourceSeed), 
     nFrame(opt.nFrame), 
-    nThread(opt.nThread), 
     iterationRound(0), 
     errUppBound(opt.errUppBound), 
     rareSignalThreshold(opt.rareSignalThreshold),
