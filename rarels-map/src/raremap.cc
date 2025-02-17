@@ -34,7 +34,7 @@ RareMapMan::RareMapMan(RareMapOpt & opt):
 }
 
 
-void RareMapMan::SecurityAwareApproximateLogicSynthesis() {
+void RareMapMan::Run() {
     // initialize
     auto currNet = oriNet;
     currNet.CleanUpPro();

@@ -41,7 +41,7 @@ private:
 public:
     explicit RareMapMan(RareMapOpt & opt);
     ~RareMapMan() = default;
-    void SecurityAwareApproximateLogicSynthesis();
+    void Run();
     void DetectRareSignals(NetMan& net, std::vector<ll> & rareSignals, double rareThreshold = 0.001);
     int CollectSignalProbabilities(NetMan& net, std::vector<double> & signalProbabilities, bool enablePrint = true);
     int CollectUnhiddenRareSignals(NetMan& net, std::vector<ll> & unhiddenRareSignals, bool enablePrint = true);
