@@ -25,8 +25,8 @@ parser CommPars(int argc, char * argv[]) {
 
 
 void RareMap(RareMapOpt & configurations) {
-    RareMapMan RareMapMan(configurations);
-    RareMapMan.Run();
+    RareMapMan rareMapMan(configurations);
+    rareMapMan.Run();
 }
 
 

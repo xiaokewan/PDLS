@@ -92,3 +92,47 @@ To perform step 3, rarity-reducing technology mapping, an example command is:
 ```
 This command takes the rarity-reducing AIG ./tmp/c0880_rarity_reduced_aig.blif as input (from step 2),
 and then performs rarity-reducing technology mapping.
+
+## Explanation of the code for rarity-reducing mapping
+The main function call is "RareMap(configurations)":
+https://github.com/changmg/RareLS/blob/master/rarels-map/src/main.cc#L79
+where "configurations" define some options such as the signal probability threshold and simulation frame.
+
+In "RareMap(configurations)", there is a key class "RareMapMan" and "rareMapMan.Run()" is the entry of rarity-reducing mapping:
+https://github.com/changmg/RareLS/blob/master/rarels-map/src/main.cc#L29
+
+In "RareMapMan::Run()", it first computes the signal probabilities:
+https://github.com/changmg/RareLS/blob/master/rarels-map/src/raremap.cc#L45
+Then, it collects rare signals (please see the definition in the paper):
+https://github.com/changmg/RareLS/blob/master/rarels-map/src/raremap.cc#L46
+Using the rare signals, the rarity-reducing algorithm that also considers area optimization is performed by "Security_Amap(htResistantMapNet)":
+https://github.com/changmg/RareLS/blob/master/rarels-map/src/raremap.cc#L63
+
+Here, the implementation of "Security_Amap" refers to the "amap" command in the open-source logic synthesis tool ABC.
+The key idea is add a penalty to the "effective area" for a cut with inherently rare signals.
+Please refer to Section 3.2.2 and Eq. (1) in the paper.
+
+Specifically, in "Security_Amap" transforms the circuit into AIG if the given circuit is not in AIG:
+https://github.com/changmg/RareLS/blob/master/rarels-map/src/raremap.cc#L1153
+And then calls "Security_NtkDarAmap" to map the AIG into standard cells:
+https://github.com/changmg/RareLS/blob/master/rarels-map/src/raremap.cc#L1168
+
+After a series of function calls, "Security_NtkDarAmap" -> "Security_Amap_ManTest" -> "Security_Amap_ManMap" -> "Security_Amap_ManMatch" -> "Security_Amap_ManMatchNode( Amap_Man_t * p, Amap_Obj_t * pNode, int fFlow, int fRefs )", 
+we have the core mapping code "Security_Amap_ManMatchNode" for the node "pNode":
+https://github.com/changmg/RareLS/blob/master/rarels-map/src/raremap.cc#L1570
+
+In "Security_Amap_ManMatchNode", 
+it first updates the "effective area" of pNode using "Security_Amap_CutAreaDeref"
+https://github.com/changmg/RareLS/blob/master/rarels-map/src/raremap.cc#L1585
+Then, it enumerates all possible cuts for pNode:
+https://github.com/changmg/RareLS/blob/master/rarels-map/src/raremap.cc#L1591
+and records the best gate in the standard cell library:
+https://github.com/changmg/RareLS/blob/master/rarels-map/src/raremap.cc#L1603
+
+"Security_Amap_CutAreaDeref" is function where Eq. (1) in the paper is implemented.
+Here, it compares the signal switching activity with a threshold.
+Switching activity (node V) = Prob(V=1) * Prob(V=0).
+If a signal's switching activity is less than the threshold,
+then the signal is a rare signal, so we add a panelty "LARGE" to the "effective area":
+https://github.com/changmg/RareLS/blob/master/rarels-map/src/raremap.cc#L1388
+
