@@ -7,12 +7,8 @@
 
 
 struct RareMapOpt {
-    bool isSign = false;
-    bool useAppDisjCut = false;
     unsigned sourceSeed = 314;
     ll nFrame = 100032;
-    ll nThread = 4;
-    double errUppBound = 7.0;
     double rareSignalThreshold = 0.02;
     abc::Abc_Ntk_t * pNtk = nullptr;
     std::string outpPath = "./tmp/";
@@ -24,19 +20,15 @@ struct RareMapOpt {
 class RareMapMan {
 private:
     const double LARGE = pow(10, 7);
-    bool isSign;
-    bool useAppDisjCut;
     unsigned sourceSeed;
     unsigned seed;
-    int iterationStage;
     ll nFrame;
     ll nThread;
     ll iterationRound;
-    double errUppBound;
     double rareSignalThreshold;
     double switchingActivityThreshold;
     double maxDelay;
-    NetMan accNet;
+    NetMan oriNet;
     std::string outpPath;
     boost::mt19937 randGen;
     std::vector<float> switchingActivity;

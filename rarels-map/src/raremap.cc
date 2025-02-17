@@ -18,16 +18,15 @@ RareMapMan::RareMapMan(RareMapOpt & opt):
     sourceSeed(opt.sourceSeed), 
     nFrame(opt.nFrame), 
     iterationRound(0), 
-    errUppBound(opt.errUppBound), 
     rareSignalThreshold(opt.rareSignalThreshold),
     switchingActivityThreshold(2.0 * opt.rareSignalThreshold * (1.0 - opt.rareSignalThreshold)),
-    accNet(NetMan(opt.pNtk, true)),
+    oriNet(NetMan(opt.pNtk, true)),
     outpPath(opt.outpPath)
 {
     seed = NewSeed();
-    if (accNet.GetNetType() == NET_TYPE::GATE) {
-        accNet.ReArrInTopoOrd();
-        maxDelay = accNet.GetDelay();
+    if (oriNet.GetNetType() == NET_TYPE::GATE) {
+        oriNet.ReArrInTopoOrd();
+        maxDelay = oriNet.GetDelay();
     }
     else   
         maxDelay = numeric_limits <double>::max();
@@ -37,7 +36,7 @@ RareMapMan::RareMapMan(RareMapOpt & opt):
 
 void RareMapMan::SecurityAwareApproximateLogicSynthesis() {
     // initialize
-    auto currNet = accNet;
+    auto currNet = oriNet;
     currNet.CleanUpPro();
     auto amapResultNet = currNet;
     auto htResistantMapNet = currNet;
