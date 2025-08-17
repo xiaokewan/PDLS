@@ -647,7 +647,7 @@ public:
 
 
 
-emplate<class Ntk>
+template<class Ntk>
 struct xag_rent_aware_size_cost_function : recursive_cost_functions<Ntk>
 {
 public:
