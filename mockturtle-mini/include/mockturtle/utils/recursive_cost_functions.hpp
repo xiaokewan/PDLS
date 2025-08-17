@@ -38,6 +38,7 @@
 #include <boost/random.hpp>
 #include <random>
 #include <unordered_map>
+#include <cmath>  
 
 #include "../traits.hpp"
 
@@ -644,5 +645,52 @@ public:
   }
 };
 
+
+
+emplate<class Ntk>
+struct xag_rent_aware_size_cost_function : recursive_cost_functions<Ntk>
+{
+public:
+  using context_t = uint32_t;
+  double r = 0.5;       // Rent exponent
+  double t = 3.0;       // Average terminals per gate (AIG default: 3)
+  double slack = 0.1;   // Slack for Rent violation
+  double weight = 1.0;  // Penalty weight for Rent violation
+
+  xag_rent_aware_size_cost_function(double rent_r = 0.5, double rent_t = 3.0, double rent_slack = 0.1, double rent_weight = 1.0)
+    : r(rent_r), t(rent_t), slack(rent_slack), weight(rent_weight) {}
+
+  static bool context_compare(const context_t& c1, const context_t& c2) {
+    return c1 > c2;  // Sort by number of gates (descending)
+  }
+
+  context_t operator()(Ntk const& ntk, node<Ntk> const& n, std::vector<context_t> const& fanin_contexts = {}) const override {
+    if (ntk.is_pi(n)) {
+      return 0;  // PI: no gates
+    }
+
+    uint32_t B = 1;  // Current node counts as one gate
+    for (const auto& fc : fanin_contexts) {
+      B += fc;  // Accumulate gate count from fanins (overcounts shared nodes)
+    }
+    return B;
+  }
+
+  void operator()(Ntk const& ntk, node<Ntk> const& n, uint32_t& total_cost, context_t const context) const override {
+    // Base size contribution: count non-PI, unvisited nodes
+    total_cost += (!ntk.is_pi(n) && ntk.visited(n) != ntk.trav_id()) ? 1 : 0;
+
+    // Rent penalty: calculate T (terminals) and apply penalty if diff_ratio > slack
+    if (context > 0) {  // Avoid division by zero
+      uint32_t T = ntk.fanin_size(n) + 1;  // T = fanins + 1 output
+      double T_exp = t * std::pow(static_cast<double>(context), r);
+      if (T_exp == 0.0) T_exp = 1.0;  // Prevent division by zero
+      double diff_ratio = std::abs(static_cast<double>(T) - T_exp) / T_exp;
+      if (diff_ratio > slack) {
+        total_cost += static_cast<uint32_t>(weight * diff_ratio * context + 0.5);  // Penalty proportional to B
+      }
+    }
+  }
+};
 
 } /* namespace mockturtle */

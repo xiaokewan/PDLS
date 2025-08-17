@@ -81,6 +81,13 @@ struct costfn_windowing_params
   /*! \brief Window size for don't cares calculation. */
   uint32_t window_size{ 12u };
 
+  /*! \brief Rent's rule params. */
+  double rent_r{0.5};             // r
+  double rent_t{3.0};             // t
+  double rent_slack{0.10};        // slack 
+  double rent_weight{0.0};        // 
+  bool   enforce_rent{false};  
+
   /*! \brief Whether to normalize the truth tables.
    *
    * For some enumerative resynthesis engines, if the truth tables
@@ -230,6 +237,26 @@ public:
     st.num_leaves += leaves.size();
     st.num_divisors += win.divs.size();
     st.sum_mffc_size += mffc_size;
+    if ( ps.enforce_rent )
+    {
+        uint32_t B = mffc_size;  
+        uint32_t T_actual = leaves.size() + 1; // leaves + root output
+    
+        double T_expected = ps.rent_t * std::pow(B, ps.rent_r);
+    
+        double diff_ratio = std::abs((double)T_actual - T_expected) / T_expected;
+    
+        if ( diff_ratio > ps.rent_slack )
+        {
+            win.rent_cost = diff_ratio * ps.rent_weight;
+    
+            // 
+            return std::nullopt;
+        }
+    }
+    win.rent_B_mffc  = mffc_size;
+    win.rent_T_actual = static_cast<uint32_t>(leaves.size()) + 1;
+    win.rent_T_exp    = ps.rent_t * std::pow( static_cast<double>(win.rent_B_mffc), ps.rent_r );
 
     return win;
   }
