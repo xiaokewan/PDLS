@@ -661,7 +661,7 @@ public:
     : r(rent_r), t(rent_t), slack(rent_slack), weight(rent_weight) {}
 
   static bool context_compare(const context_t& c1, const context_t& c2) {
-    return c1 > c2;  // Sort by number of gates (descending)
+    return c1 > c2;  
   }
 
   context_t operator()(Ntk const& ntk, node<Ntk> const& n, std::vector<context_t> const& fanin_contexts = {}) const override {

@@ -82,9 +82,22 @@
      string tempFileBaseName;
      mockturtle::experimental::cost_generic_resub_params ps; 
      mockturtle::experimental::cost_generic_resub_stats st;
+
+     bool   enforce_rent = true;
+     double rent_r = 0.5;
+     double rent_t = 3.0;
+     double rent_slack = 0.10;
+     double rent_weight = 1.0;
+ 
  
      explicit TechnologyIndependentOptimizer() {}
  
+     void set_rent_params(bool enforce, double r, double t, double slack, double weight) {
+        enforce_rent = enforce;
+        rent_r = r; rent_t = t; rent_slack = slack; rent_weight = weight;
+    }
+
+
      void UpdateBestAig(aig_network& aig, aig_network& bestAig, std::vector<uint32_t>& bestCosts) {
          assert(bestCosts.size() == 2);
          auto size = cost_view( aig, costSize ).get_cost();
@@ -104,11 +117,17 @@
      void Resub(aig_network& aig, aig_network& bestAig, std::vector<uint32_t>& bestCosts, int windowSize) {
          ps.wps.max_pis = windowSize;
          // rent params
-         ps.wps.enforce_rent = true;
-         ps.wps.rent_r = 0.5;
-         ps.wps.rent_t = 3.0;
-         ps.wps.rent_slack = 0.10;
-         ps.wps.rent_weight = 1.0;
+
+         ps.wps.enforce_rent = enforce_rent;
+         ps.wps.rent_r = rent_r;
+         ps.wps.rent_t = rent_t;
+         ps.wps.rent_slack = rent_slack;
+         ps.wps.rent_weight = rent_weight;
+         
+         rentCost = xag_rent_aware_size_cost_function<aig_network>(
+             rent_r, rent_t, rent_slack, rent_weight
+         );
+         
          rentCost = xag_rent_aware_size_cost_function<aig_network>(ps.wps.rent_r, ps.wps.rent_t, ps.wps.rent_slack, ps.wps.rent_weight);
          cost_generic_resub(aig, rentCost, ps, &st);
          aig = cleanup_dangling( aig );
@@ -192,18 +211,44 @@
  
  int main(int argc, char ** argv) {
      /* parse arguments */
-     if (argc != 2) {
-         fmt::print( "[e] need one argument, please specify input circuit path\n" );
-         return 0;
-     }
+     if (argc < 2) {
+        fmt::print("[e] usage: {} <input.aig> [--rent_r R] [--rent_t T] [--rent_slack S] [--rent_weight W] [--enforce_rent 0|1]\n", argv[0]);
+        return 0;
+      }
      std::string benchmark = argv[1];
      fmt::print( "[i] processing {}\n", benchmark );
- 
+
+    //  set rent params
+     bool   enforce_rent = true;
+     double rent_r = 0.5, rent_t = 3.0, rent_slack = 0.10, rent_weight = 1.0;
+     auto read_double = [&](int& i)->double {
+         if (i+1 >= argc) { throw std::runtime_error("missing value for option"); }
+         return std::stod(argv[++i]);
+     };
+     auto read_bool01 = [&](int& i)->bool {
+         if (i+1 >= argc) { throw std::runtime_error("missing value for option"); }
+         int v = std::stoi(argv[++i]);
+         if (v!=0 && v!=1) throw std::runtime_error("enforce_rent must be 0 or 1");
+         return v==1;
+     };
+     for (int i = 2; i < argc; ++i) {
+         std::string opt = argv[i];
+         if (opt == "--rent_r")        { rent_r = read_double(i); }
+         else if (opt == "--rent_t")   { rent_t = read_double(i); }
+         else if (opt == "--rent_slack"){ rent_slack = read_double(i); }
+         else if (opt == "--rent_weight"){ rent_weight = read_double(i); }
+         else if (opt == "--enforce_rent"){ enforce_rent = read_bool01(i); }
+         else {
+             fmt::print("[w] unknown option ignored: {}\n", opt);
+         }
+     }
+
      /* create directories */
      CreatePath("./tmp/");
  
      /* deal with output name */
      TechnologyIndependentOptimizer optimizer;
+     optimizer.set_rent_params(enforce_rent, rent_r, rent_t, rent_slack, rent_weight);
      std::string circuitName = benchmark.substr( benchmark.find_last_of( '/' ) + 1, benchmark.find_last_of( '.' ) - benchmark.find_last_of( '/' ) - 1 );
      optimizer.baseName = "./tmp/" + circuitName;
      if (optimizer.baseName.find("_init") != std::string::npos)
