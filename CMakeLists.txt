@@ -4,7 +4,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 # Set the project name
-project(rarels)
+project(pdls)
 
 # Add sub directories
 add_subdirectory(abc)
