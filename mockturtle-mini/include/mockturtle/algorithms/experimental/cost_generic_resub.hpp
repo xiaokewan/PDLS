@@ -237,27 +237,7 @@ public:
     st.num_leaves += leaves.size();
     st.num_divisors += win.divs.size();
     st.sum_mffc_size += mffc_size;
-    if ( ps.enforce_rent )
-    {
-        uint32_t B = mffc_size;  
-        uint32_t T_actual = leaves.size() + 1; // leaves + root output
     
-        double T_expected = ps.rent_t * std::pow(B, ps.rent_r);
-    
-        double diff_ratio = std::abs((double)T_actual - T_expected) / T_expected;
-    
-        if ( diff_ratio > ps.rent_slack )
-        {
-            win.rent_cost = diff_ratio * ps.rent_weight;
-    
-            // 
-            return std::nullopt;
-        }
-    }
-    win.rent_B_mffc  = mffc_size;
-    win.rent_T_actual = static_cast<uint32_t>(leaves.size()) + 1;
-    win.rent_T_exp    = ps.rent_t * std::pow( static_cast<double>(win.rent_B_mffc), ps.rent_r );
-
     return win;
   }
 
