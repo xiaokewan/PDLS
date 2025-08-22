@@ -52,6 +52,8 @@
 #include <functional>
 #include <optional>
 #include <vector>
+#include <type_traits>
+#include <utility>
 
 namespace mockturtle::experimental
 {
@@ -87,6 +89,7 @@ struct costfn_windowing_params
   double rent_slack{0.10};        // slack 
   double rent_weight{0.0};        // 
   bool   enforce_rent{false};  
+  bool   rent_only_over_slack{ true };  
 
   /*! \brief Whether to normalize the truth tables.
    *
@@ -155,6 +158,14 @@ struct costfn_windowing_stats
 
 namespace detail
 {
+  // detection trait for res_t::num_inserts()
+template <typename T, typename = void>
+struct has_num_inserts : std::false_type {};
+
+template <typename T>
+struct has_num_inserts<T, std::void_t<decltype(std::declval<T const&>().num_inserts())>>
+    : std::true_type {};
+
 template<class Ntk, class TT>
 struct cost_aware_problem
 {
@@ -165,6 +176,9 @@ struct cost_aware_problem
   std::vector<signal> leaves;
   std::vector<signal> divs;
   std::vector<signal> mffcs;
+
+  uint32_t B_w{0}; // |MFFC|
+  uint32_t T_w{0}; 
 };
 
 template<class Ntk, class TT = kitty::dynamic_truth_table>
@@ -230,8 +244,15 @@ public:
       collect_divisors( leaves, supported );
     } );
 
+    
+    uint32_t T_w = leaves.size() + 1;
+    uint32_t B_w = mffc_size;
+
     /* the root node is also regular */
     win.root = ntk.make_signal( n );
+
+    win.B_w = B_w;
+    win.T_w = T_w;
 
     st.num_windows++;
     st.num_leaves += leaves.size();
@@ -241,12 +262,45 @@ public:
     return win;
   }
 
+  // template<typename res_t>
+  // uint32_t gain( problem_t const& prob, res_t const& res ) const
+  // {
+  //   return 1; /* cannot predict the final cost */
+  // }
   template<typename res_t>
   uint32_t gain( problem_t const& prob, res_t const& res ) const
   {
-    return 1; /* cannot predict the final cost */
-  }
+    uint32_t used = prob.leaves.size();
+    // {
 
+    //   std::vector<bool> used_leaf( prob.leaves.size(), false );
+    //   for (auto idx : res.inputs()) {               
+    //     if (idx < prob.leaves.size())
+    //       used_leaf[idx] = true;
+    //   }
+    //   for (bool u : used_leaf) if (u) ++used;
+    // }
+    const uint32_t Tprime = used + 1;
+    uint32_t Bprime = 0;
+    if constexpr ( has_num_inserts<res_t>::value ) {
+      Bprime = res.num_inserts();
+    } else {
+      Bprime = std::max<uint32_t>(1, ps.max_inserts); 
+    }
+  
+    double Texp = ps.rent_t * std::pow( static_cast<double>(Bprime), ps.rent_r );
+    if (Texp < 1e-12) Texp = 1.0;
+    const double diff = std::abs( static_cast<double>(Tprime) - Texp ) / Texp;
+    #ifdef USE_ONLY_OVER_SLACK_FROM_PS
+    const double over = ps.rent_only_over_slack ? std::max(0.0, diff - ps.rent_slack) : diff;
+    #else
+    const double over = std::max(0.0, diff - ps.rent_slack);
+    #endif
+    const uint32_t penalty = static_cast<uint32_t>( ps.rent_weight * over * Bprime + 0.5 );
+
+    return 1u + penalty;
+  }
+  
   template<typename res_t>
   bool update_ntk( problem_t const& prob, res_t const& res )
   {

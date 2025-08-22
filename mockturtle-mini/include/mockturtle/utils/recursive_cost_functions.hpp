@@ -647,50 +647,164 @@ public:
 
 
 
+// template<class Ntk>
+// struct xag_rent_aware_size_cost_function : recursive_cost_functions<Ntk>
+// {
+// public:
+//   using context_t = uint32_t;
+//   double r = 0.5;       // Rent exponent
+//   double t = 3.0;       // Average terminals per gate (AIG default: 3)
+//   double slack = 0.1;   // Slack for Rent violation
+//   double weight = 1.0;  // Penalty weight for Rent violation
+
+//   xag_rent_aware_size_cost_function(double rent_r = 0.5, double rent_t = 3.0, double rent_slack = 0.1, double rent_weight = 1.0)
+//     : r(rent_r), t(rent_t), slack(rent_slack), weight(rent_weight) {}
+
+//   static bool context_compare(const context_t& c1, const context_t& c2) {
+//     return c1 > c2;  
+//   }
+
+//   context_t operator()(Ntk const& ntk, node<Ntk> const& n, std::vector<context_t> const& fanin_contexts = {}) const override {
+//     if (ntk.is_pi(n)) return 0;
+//     uint32_t B = 1;  // Current node counts as one gate
+//     for (const auto& fc : fanin_contexts) B += fc;  
+//     return B;
+//   }
+
+//   void operator()(Ntk const& ntk, node<Ntk> const& n, uint32_t& total_cost, context_t const context) const override {
+//     // Base size contribution: count non-PI, unvisited nodes
+//     total_cost += (!ntk.is_pi(n) && ntk.visited(n) != ntk.trav_id()) ? 1 : 0;
+
+//     // Rent penalty: calculate T (terminals) and apply penalty if diff_ratio > slack
+//     if (context > 0) {  // Avoid division by zero
+//       uint32_t T = ntk.fanin_size(n) + 1;  // T = fanins + 1 output
+//       double T_exp = t * std::pow(static_cast<double>(context), r);
+//       if (T_exp == 0.0) T_exp = 1.0;  // Prevent division by zero
+//       double diff_ratio = std::abs(static_cast<double>(T) - T_exp) / T_exp;
+//       // if (diff_ratio > slack) {
+//       total_cost += static_cast<uint32_t>(weight * diff_ratio * context + 0.5);  // Penalty proportional to B
+//       // }
+//     }
+//   }
+// };
+
+#include <memory>
+#include <algorithm>
+#include <fstream>
+
 template<class Ntk>
 struct xag_rent_aware_size_cost_function : recursive_cost_functions<Ntk>
 {
 public:
   using context_t = uint32_t;
-  double r = 0.5;       // Rent exponent
-  double t = 3.0;       // Average terminals per gate (AIG default: 3)
-  double slack = 0.1;   // Slack for Rent violation
-  double weight = 1.0;  // Penalty weight for Rent violation
 
-  xag_rent_aware_size_cost_function(double rent_r = 0.5, double rent_t = 3.0, double rent_slack = 0.1, double rent_weight = 1.0)
+  double r = 0.5;       // Rent exponent
+  double t = 3.0;       // Average terminals per gate
+  double slack = 0.10;  // Allowed relative deviation
+  double weight = 1.0;  // Penalty weight
+  bool   only_over_slack = true; // Penalize only deviations beyond slack
+  bool   debug = true;           // Collect stats
+  uint32_t top_k = 10;           // Print top-K worst nodes
+
+  struct rec_t { uint32_t node_idx; uint32_t B; uint32_t T; double Texp; double diff; uint32_t penalty; };
+  struct stats_t
+  {
+    uint64_t nodes_seen      = 0;
+    uint64_t nodes_counted   = 0;
+    uint64_t nodes_penalized = 0;
+    uint64_t penalty_sum     = 0;
+    double   diff_sum        = 0.0;
+    std::vector<rec_t> worst;
+  };
+
+  std::shared_ptr<stats_t> stats = std::make_shared<stats_t>();
+
+  xag_rent_aware_size_cost_function(double rent_r = 0.5, double rent_t = 3.0,
+                                    double rent_slack = 0.1, double rent_weight = 1.0)
     : r(rent_r), t(rent_t), slack(rent_slack), weight(rent_weight) {}
 
-  static bool context_compare(const context_t& c1, const context_t& c2) {
-    return c1 > c2;  
+  static bool context_compare(const context_t& c1, const context_t& c2) { return c1 > c2; }
+
+  void reset_stats() const
+  {
+    stats->nodes_seen = stats->nodes_counted = stats->nodes_penalized = stats->penalty_sum = 0;
+    stats->diff_sum = 0.0;
+    stats->worst.clear();
   }
 
-  context_t operator()(Ntk const& ntk, node<Ntk> const& n, std::vector<context_t> const& fanin_contexts = {}) const override {
-    if (ntk.is_pi(n)) {
-      return 0;  // PI: no gates
+  template<typename NTK>
+  void print_report(NTK const&, const char* tag = "Rent-aware report") const
+  {
+    fmt::print("[i] {}\n", tag);
+    fmt::print("    seen={}, counted={}, penalized={}, penalty_sum={}\n",
+               stats->nodes_seen, stats->nodes_counted, stats->nodes_penalized, stats->penalty_sum);
+    if (stats->nodes_seen)
+      fmt::print("    avg diff_ratio={:.4f}\n", stats->diff_sum / double(stats->nodes_seen));
+    if (!stats->worst.empty()) {
+      auto tmp = stats->worst;
+      std::sort(tmp.begin(), tmp.end(), [](auto const& a, auto const& b){ return a.penalty > b.penalty; });
+      auto k = std::min<uint32_t>(top_k, tmp.size());
+      fmt::print("    top-{} penalty nodes:\n", k);
+      for (uint32_t i = 0; i < k; ++i) {
+        auto const& r = tmp[i];
+        fmt::print("      node#{:6d}: B={}, T={}, Texp={:.2f}, diff={:.3f}, penalty={}\n",
+                   r.node_idx, r.B, r.T, r.Texp, r.diff, r.penalty);
+      }
     }
+  }
 
-    uint32_t B = 1;  // Current node counts as one gate
-    for (const auto& fc : fanin_contexts) {
-      B += fc;  // Accumulate gate count from fanins (overcounts shared nodes)
-    }
+  // Optional: dump CSV for post analysis
+  void dump_csv(const std::string& path) const
+  {
+    std::ofstream f(path);
+    f << "node_id,B,T,Texp,diff,penalty\n";
+    for (auto const& r : stats->worst)
+      f << r.node_idx << "," << r.B << "," << r.T << "," << r.Texp << "," << r.diff << "," << r.penalty << "\n";
+  }
+
+  context_t operator()(Ntk const& ntk, node<Ntk> const& n,
+                       std::vector<context_t> const& fanin_contexts = {}) const override
+  {
+    if (ntk.is_pi(n)) return 0;
+    uint32_t B = 1;
+    for (auto fc : fanin_contexts) B += fc;
     return B;
   }
 
-  void operator()(Ntk const& ntk, node<Ntk> const& n, uint32_t& total_cost, context_t const context) const override {
-    // Base size contribution: count non-PI, unvisited nodes
-    total_cost += (!ntk.is_pi(n) && ntk.visited(n) != ntk.trav_id()) ? 1 : 0;
+  void operator()(Ntk const& ntk, node<Ntk> const& n,
+                  uint32_t& total_cost, context_t const B) const override
+  {
+    stats->nodes_seen++;
 
-    // Rent penalty: calculate T (terminals) and apply penalty if diff_ratio > slack
-    if (context > 0) {  // Avoid division by zero
-      uint32_t T = ntk.fanin_size(n) + 1;  // T = fanins + 1 output
-      double T_exp = t * std::pow(static_cast<double>(context), r);
-      if (T_exp == 0.0) T_exp = 1.0;  // Prevent division by zero
-      double diff_ratio = std::abs(static_cast<double>(T) - T_exp) / T_exp;
-      if (diff_ratio > slack) {
-        total_cost += static_cast<uint32_t>(weight * diff_ratio * context + 0.5);  // Penalty proportional to B
+    if (!ntk.is_pi(n) && ntk.visited(n) != ntk.trav_id()) {
+      stats->nodes_counted++;
+      total_cost += 1;
+    }
+
+    if (B == 0) return;
+
+    const uint32_t T = ntk.fanin_size(n) + 1;
+    double Texp = t * std::pow(static_cast<double>(B), r);
+    if (Texp < 1e-12) Texp = 1.0;
+    double diff_ratio = std::abs(static_cast<double>(T) - Texp) / Texp;
+    stats->diff_sum += diff_ratio;
+
+    double over = only_over_slack ? std::max(0.0, diff_ratio - slack) : diff_ratio;
+    if (over > 0.0) {
+      uint32_t pen = static_cast<uint32_t>(weight * over * B + 0.5);
+      if (pen > 0) {
+        stats->nodes_penalized++;
+        stats->penalty_sum += pen;
+        total_cost += pen;
+
+        if (debug) {
+          uint32_t idx = static_cast<uint32_t>(ntk.node_to_index(n)); // if supported
+          stats->worst.push_back(rec_t{idx, B, T, Texp, diff_ratio, pen});
+        }
       }
     }
   }
 };
+
 
 } /* namespace mockturtle */

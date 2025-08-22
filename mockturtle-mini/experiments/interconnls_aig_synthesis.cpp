@@ -138,6 +138,7 @@
          UpdateBestAig(aig, bestAig, bestCosts);
          fmt::print("[i] Using Rent-aware cost: r={:.2f}, t={:.2f}, slack={:.2f}, weight={:.2f}\n", 
             rentCost.r, rentCost.t, rentCost.slack, rentCost.weight);
+         rentCost.print_report(aig, "sum");
      }
  
      void PrintCosts(aig_network& aig, const string & prefix) {

@@ -30,7 +30,7 @@ using namespace std::filesystem;
 
 
 
-// 1) cost：size / depth
+// 1) cost：size or depth
 
 template<class Ntk> struct xag_size_cost_function : recursive_cost_functions<Ntk>
 {
@@ -75,9 +75,8 @@ template<class Ntk> struct xag_fanout_cost_function : recursive_cost_functions<N
   }
 };
 
-//
+
 // 3) Rent-aware
-//
 template<class Ntk> struct xag_rent_aware_size_cost_function : recursive_cost_functions<Ntk>
 {
   using context_t = uint32_t;
