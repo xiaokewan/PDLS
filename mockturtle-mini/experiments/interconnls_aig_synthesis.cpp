@@ -82,6 +82,9 @@
      xag_size_cost_function<aig_network> costSize; 
      xag_depth_cost_function<aig_network> costDepth; 
      xag_rent_aware_size_cost_function<aig_network> rentCost;
+     free_cost_function<aig_network> freeCost;
+     interconnect_cost_function<aig_network> interCost;
+
      string baseName;
      string tempFileBaseName;
      mockturtle::experimental::cost_generic_resub_params ps; 
@@ -128,17 +131,22 @@
          ps.wps.rent_slack = rent_slack;
          ps.wps.rent_weight = rent_weight;
          
-         rentCost = xag_rent_aware_size_cost_function<aig_network>(
-             rent_r, rent_t, rent_slack, rent_weight
-         );
+        //  rentCost = xag_rent_aware_size_cost_function<aig_network>(
+        //      rent_r, rent_t, rent_slack, rent_weight
+        //  );
          
-         rentCost = xag_rent_aware_size_cost_function<aig_network>(ps.wps.rent_r, ps.wps.rent_t, ps.wps.rent_slack, ps.wps.rent_weight);
-         cost_generic_resub(aig, rentCost, ps, &st);
+        //  rentCost = xag_rent_aware_size_cost_function<aig_network>(ps.wps.rent_r, ps.wps.rent_t, ps.wps.rent_slack, ps.wps.rent_weight);
+         freeCost = free_cost_function<aig_network>();
+         interCost = interconnect_cost_function<aig_network>();
+         cost_generic_resub(aig, interCost, ps, &st);
          aig = cleanup_dangling( aig );
          UpdateBestAig(aig, bestAig, bestCosts);
-         fmt::print("[i] Using Rent-aware cost: r={:.2f}, t={:.2f}, slack={:.2f}, weight={:.2f}\n", 
-            rentCost.r, rentCost.t, rentCost.slack, rentCost.weight);
-         rentCost.print_report(aig, "sum");
+
+         interCost.print_report("Interconnect evaluation");
+        // 
+        //  fmt::print("[i] Using Rent-aware cost: r={:.2f}, t={:.2f}, slack={:.2f}, weight={:.2f}\n", 
+        //     rentCost.r, rentCost.t, rentCost.slack, rentCost.weight);
+        //  rentCost.print_report(aig, "sum");
      }
  
      void PrintCosts(aig_network& aig, const string & prefix) {

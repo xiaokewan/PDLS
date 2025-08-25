@@ -783,7 +783,7 @@ public:
 
     if (B == 0) return;
 
-    const uint32_t T = ntk.fanin_size(n) + 1;
+    const uint32_t T = ntk.num_pis() + ntk.num_pos();
     double Texp = t * std::pow(static_cast<double>(B), r);
     if (Texp < 1e-12) Texp = 1.0;
     double diff_ratio = std::abs(static_cast<double>(T) - Texp) / Texp;
@@ -803,6 +803,87 @@ public:
         }
       }
     }
+  }
+};
+
+
+template<class Ntk>
+struct free_cost_function : recursive_cost_functions<Ntk>
+{
+  using context_t = uint32_t;
+
+  context_t operator()(Ntk const& ntk, node<Ntk> const& n,
+                       std::vector<context_t> const& fanin_contexts = {}) const override
+  {
+    return ntk.is_pi(n) ? 0 : 1;
+  }
+
+  void operator()(Ntk const& ntk, node<Ntk> const& n,
+                  uint32_t& total_cost, context_t const) const override
+  {
+    if (!ntk.is_pi(n) && ntk.visited(n) != ntk.trav_id())
+      total_cost += 1;
+  }
+
+  
+  static bool context_compare( const context_t& c1, const context_t& c2 )
+  {
+    return c1 > c2;
+  }
+};
+
+
+template<class Ntk>
+struct interconnect_cost_function : recursive_cost_functions<Ntk>
+{
+  using context_t = uint32_t;
+
+  double w_node = 1.0; // weight for node count
+  double w_edge = 1.0; // weight for edge count
+
+  struct stats_t {
+    uint64_t nodes_seen = 0;
+    uint64_t edges_seen = 0;
+    uint64_t total_cost = 0;
+  };
+
+  std::shared_ptr<stats_t> stats = std::make_shared<stats_t>();
+
+  interconnect_cost_function(double wnode = 1.0, double wedge = 1.0)
+      : w_node(wnode), w_edge(wedge) {}
+
+  static bool context_compare(const context_t&, const context_t&) { return true; }
+
+  context_t operator()(Ntk const&, node<Ntk> const&,
+                       std::vector<context_t> const& = {}) const override
+  {
+    return 0; // no per-node context needed
+  }
+
+  void operator()(Ntk const& ntk, node<Ntk> const& n,
+                  uint32_t& total_cost, context_t const) const override
+  {
+    // size term
+    if (!ntk.is_pi(n) && ntk.visited(n) != ntk.trav_id()) {
+      stats->nodes_seen++;
+      total_cost += static_cast<uint32_t>(w_node);
+    }
+
+    // edge term: count fanins only (each edge once)
+    uint32_t deg = ntk.fanin_size(n);
+    if (deg > 0) {
+      stats->edges_seen += deg;
+      total_cost += static_cast<uint32_t>(w_edge * deg);
+    }
+
+    stats->total_cost = total_cost;
+  }
+
+  void print_report(const char* tag = "Interconnect cost report") const
+  {
+    fmt::print("[i] {}\n", tag);
+    fmt::print("    nodes_seen = {}, edges_seen = {}, total_cost = {}\n",
+               stats->nodes_seen, stats->edges_seen, stats->total_cost);
   }
 };
 
