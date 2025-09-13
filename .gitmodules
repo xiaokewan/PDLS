@@ -2,3 +2,7 @@
 	path = abc
 	url = git@github.com:changmg/abc.git
 	branch = abc-20231002
+[submodule "vtr"]
+	path = vtr
+	url = https://github.com/verilog-to-routing/vtr-verilog-to-routing.git
+	branch = v9.0
