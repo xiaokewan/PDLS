@@ -4,7 +4,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 # Set the project name
-project(rarels_map)
+project(fpgaintermap)
 
 # Set top directory
 set(TOP_DIR ${PROJECT_SOURCE_DIR}/..)
@@ -23,5 +23,5 @@ add_definitions(-DLIN64 -g -Wall -O3 -std=c++2a)
 set(EXECUTABLE_OUTPUT_PATH ${TOP_DIR})
 
 # Add an executable
-add_executable(rarels_map ${sources})
-target_link_libraries(rarels_map libabc -lm -ldl -rdynamic -lreadline -ltermcap -lpthread -lstdc++ -lrt -lstdc++fs -lboost_timer -lboost_system)
+add_executable(fpgaintermap ${sources})
+target_link_libraries(fpgaintermap libabc -lm -ldl -rdynamic -lreadline -ltermcap -lpthread -lstdc++ -lrt -lstdc++fs -lboost_timer -lboost_system)

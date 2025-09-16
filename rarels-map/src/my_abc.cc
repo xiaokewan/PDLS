@@ -1,7 +1,7 @@
 #include "my_abc.h"
 
 
-using namespace abc;
+// using namespace abc;
 using namespace std;
 
 
@@ -465,7 +465,7 @@ double AbcMan::GetDelay(Abc_Ntk_t * pNtk) const {
 }
 
 
-bool AbcMan::CheckSCLNet(abc::Abc_Ntk_t * pNtk) const {
+bool AbcMan::CheckSCLNet(Abc_Ntk_t * pNtk) const {
     Abc_Obj_t * pObj, * pFanin;
     int i, k, fFlag = 1;
     Abc_NtkIncrementTravId( pNtk );        
@@ -973,7 +973,7 @@ void NetMan::TopoSortRecWithIds(Abc_Obj_t * pObj, vector <ll> & nodes) const {
 }
 
 
-vector <Abc_Obj_t *> NetMan::GetTFI(abc::Abc_Obj_t * pObj) const {
+vector <Abc_Obj_t *> NetMan::GetTFI(Abc_Obj_t * pObj) const {
     vector <Abc_Obj_t *> nodes;
     nodes.reserve(GetNodeNum());
     SetNetNotTrav();
@@ -986,7 +986,7 @@ vector <Abc_Obj_t *> NetMan::GetTFI(abc::Abc_Obj_t * pObj) const {
 }
 
 
-void NetMan::GetTFIRec(abc::Abc_Obj_t * pObj, std::vector <abc::Abc_Obj_t *> & nodes) const {
+void NetMan::GetTFIRec(Abc_Obj_t * pObj, std::vector <Abc_Obj_t *> & nodes) const {
     if (!IsNode(pObj))
         return;
     SetObjTrav(pObj);
@@ -999,7 +999,7 @@ void NetMan::GetTFIRec(abc::Abc_Obj_t * pObj, std::vector <abc::Abc_Obj_t *> & n
 }
 
 
-vector <ll> NetMan::GetTFI(abc::Abc_Obj_t * pObj, const set <ll> & critGraph) const {
+vector <ll> NetMan::GetTFI(Abc_Obj_t * pObj, const set <ll> & critGraph) const {
     vector <ll> objs;
     objs.reserve(GetNodeNum());
     SetNetNotTrav();
@@ -1012,7 +1012,7 @@ vector <ll> NetMan::GetTFI(abc::Abc_Obj_t * pObj, const set <ll> & critGraph) co
 }
 
 
-void NetMan::GetTFIRec(abc::Abc_Obj_t * pObj, std::vector <ll> & objs, const set <ll> & critGraph) const {
+void NetMan::GetTFIRec(Abc_Obj_t * pObj, std::vector <ll> & objs, const set <ll> & critGraph) const {
     if (critGraph.count(pObj->Id) == 0)
         return;
     // if (!IsNode(pObj))
@@ -1027,7 +1027,7 @@ void NetMan::GetTFIRec(abc::Abc_Obj_t * pObj, std::vector <ll> & objs, const set
 }
 
 
-vector <Abc_Obj_t *> NetMan::GetTFO(abc::Abc_Obj_t * pObj) const {
+vector <Abc_Obj_t *> NetMan::GetTFO(Abc_Obj_t * pObj) const {
     vector <Abc_Obj_t *> nodes;
     nodes.reserve(GetNodeNum());
     SetNetNotTrav();
@@ -1041,7 +1041,7 @@ vector <Abc_Obj_t *> NetMan::GetTFO(abc::Abc_Obj_t * pObj) const {
 }
 
 
-void NetMan::GetTFORec(abc::Abc_Obj_t * pObj, std::vector <abc::Abc_Obj_t *> & nodes) const {
+void NetMan::GetTFORec(Abc_Obj_t * pObj, std::vector <Abc_Obj_t *> & nodes) const {
     if (!IsNode(pObj))
         return;
     SetObjTrav(pObj);
@@ -1054,7 +1054,7 @@ void NetMan::GetTFORec(abc::Abc_Obj_t * pObj, std::vector <abc::Abc_Obj_t *> & n
 }
 
 
-vector <ll> NetMan::GetTFO(abc::Abc_Obj_t * pObj, const set <ll> & critGraph) const {
+vector <ll> NetMan::GetTFO(Abc_Obj_t * pObj, const set <ll> & critGraph) const {
     vector <ll> objs;
     objs.reserve(GetNodeNum());
     SetNetNotTrav();
@@ -1068,7 +1068,7 @@ vector <ll> NetMan::GetTFO(abc::Abc_Obj_t * pObj, const set <ll> & critGraph) co
 }
 
 
-void NetMan::GetTFORec(abc::Abc_Obj_t * pObj, std::vector <ll> & objs, const set <ll> & critGraph) const {
+void NetMan::GetTFORec(Abc_Obj_t * pObj, std::vector <ll> & objs, const set <ll> & critGraph) const {
     if (critGraph.count(pObj->Id) == 0)
         return;
     // if (!IsNode(pObj))
@@ -1083,7 +1083,7 @@ void NetMan::GetTFORec(abc::Abc_Obj_t * pObj, std::vector <ll> & objs, const set
 }
 
 
-std::vector <abc::Abc_Obj_t *> NetMan::GetFanins(abc::Abc_Obj_t * pObj) const {
+std::vector <Abc_Obj_t *> NetMan::GetFanins(Abc_Obj_t * pObj) const {
     vector <Abc_Obj_t *> nodes;
     nodes.reserve(GetFaninNum(pObj));
     for (ll i = 0; i < GetFaninNum(pObj); ++i)
@@ -1092,7 +1092,7 @@ std::vector <abc::Abc_Obj_t *> NetMan::GetFanins(abc::Abc_Obj_t * pObj) const {
 }
 
 
-std::vector <abc::Abc_Obj_t *> NetMan::GetFanouts(abc::Abc_Obj_t * pObj) const {
+std::vector <Abc_Obj_t *> NetMan::GetFanouts(Abc_Obj_t * pObj) const {
     vector <Abc_Obj_t *> nodes;
     nodes.reserve(GetFanoutNum(pObj));
     for (ll i = 0; i < GetFanoutNum(pObj); ++i)
@@ -1873,7 +1873,7 @@ vector <Abc_Obj_t *> NetMan::GetNodeMffc(Abc_Obj_t * pNode) const {
 
 
 ll NetMan::CreateNode(const std::vector <ll> & faninIds, const std::string & sop) {
-    auto pNewNode = abc::Abc_NtkCreateNode(GetNet());
+    auto pNewNode = Abc_NtkCreateNode(GetNet());
     for (const auto & faninId: faninIds)
         Abc_ObjAddFanin(pNewNode, GetObj(faninId));
     #ifdef DEBUG
@@ -1884,11 +1884,11 @@ ll NetMan::CreateNode(const std::vector <ll> & faninIds, const std::string & sop
 }
 
 
-// std::vector <ll> NetMan::TempRepl(abc::Abc_Obj_t * pTS, abc::Abc_Obj_t * pSS) {
+// std::vector <ll> NetMan::TempRepl(Abc_Obj_t * pTS, Abc_Obj_t * pSS) {
 //     #ifdef DEBUG
 //     assert(pTS != pSS);
 //     assert(pTS->pNtk == pSS->pNtk);
-//     assert(abc::Abc_ObjFanoutNum(pTS));
+//     assert(Abc_ObjFanoutNum(pTS));
 //     #endif
 //     // record fanouts
 //     vector <ll> ret = {pTS->Id, pSS->Id};
@@ -1902,7 +1902,7 @@ ll NetMan::CreateNode(const std::vector <ll> & faninIds, const std::string & sop
 //     }
 //     PrintVect(ret, "\n");
 //     // transfer fanouts
-//     abc::Abc_ObjTransferFanout(pTS, pSS);
+//     Abc_ObjTransferFanout(pTS, pSS);
 //     return ret;
 // }
 
@@ -1916,10 +1916,10 @@ static inline int Vec_IntFindFrom(Vec_Int_t * p, int Entry, int start) {
     return -1;
 }
 
-std::vector <ll> NetMan::TempRepl(abc::Abc_Obj_t * pTS, abc::Abc_Obj_t * pSS) {
+std::vector <ll> NetMan::TempRepl(Abc_Obj_t * pTS, Abc_Obj_t * pSS) {
     assert(pTS != pSS);
     assert(pTS->pNtk == pSS->pNtk);
-    assert(abc::Abc_ObjFanoutNum(pTS));
+    assert(Abc_ObjFanoutNum(pTS));
     // record fanouts
     vector <ll> ret = {pTS->Id, pSS->Id};
     Abc_Obj_t * pFanout = nullptr;
@@ -1936,7 +1936,7 @@ std::vector <ll> NetMan::TempRepl(abc::Abc_Obj_t * pTS, abc::Abc_Obj_t * pSS) {
     }
     // PrintVect(ret, "\n");
     // transfer fanouts
-    abc::Abc_ObjTransferFanout(pTS, pSS);
+    Abc_ObjTransferFanout(pTS, pSS);
     return ret;
 }
 
@@ -2017,7 +2017,7 @@ void NetMan::PatchFanin( Abc_Obj_t * pObj, ll iFanin, Abc_Obj_t * pFaninOld, Abc
     assert( pFaninOld != pFaninNewR );
     assert( pObj->pNtk == pFaninOld->pNtk );
     assert( pObj->pNtk == pFaninNewR->pNtk );
-    assert( abc::Abc_ObjFanin(pObj, iFanin) == pFaninOld );
+    assert( Abc_ObjFanin(pObj, iFanin) == pFaninOld );
 
     // remember the attributes of the old fanin
     Vec_IntWriteEntry( &pObj->vFanins, iFanin, pFaninNewR->Id );
@@ -2337,7 +2337,7 @@ void NetMan::ProcHalfAndFullAddNew() {
     CleanUp();
 }
 
-abc::Abc_Obj_t * NetMan::CreateGate(vector <Abc_Obj_t *> && fanins, const std::string & gateName) {
+Abc_Obj_t * NetMan::CreateGate(vector <Abc_Obj_t *> && fanins, const std::string & gateName) {
     auto pLib = (Mio_Library_t *)Abc_FrameReadLibGen();
     auto pGate = Mio_LibraryReadGateByName(pLib, const_cast <char *> (gateName.c_str()), nullptr);
     assert(pGate != nullptr);
@@ -2514,7 +2514,7 @@ void NetMan::DumpCFile(std::string&& fileName) {
 
     std::cout << "write " << fileName << endl;
     FILE * file = fopen(fileName.c_str(), "w");
-    abc::Abc_Obj_t * pObj = nullptr;
+    Abc_Obj_t * pObj = nullptr;
     int i = 0;
 
     fprintf(file, "#include <stdbool.h>\n");
@@ -2546,8 +2546,8 @@ void NetMan::DumpCFile(std::string&& fileName) {
                 pSop = Mio_GateReadSop(static_cast<Mio_Gate_t*>(pObj->pData));
             else
                 assert(0);
-            int nVars = abc::Abc_SopGetVarNum(pSop);
-            if (abc::Abc_SopIsComplement(pSop))
+            int nVars = Abc_SopGetVarNum(pSop);
+            if (Abc_SopIsComplement(pSop))
                 oss << "!(\n";
             else
                 oss << "(\n";
@@ -2558,7 +2558,7 @@ void NetMan::DumpCFile(std::string&& fileName) {
                     oss << "|| ( ";
                 bool isFirst = true;
                 for (int k = 0; pCube[k] != ' '; k++) {
-                    abc::Abc_Obj_t * pFanin = Abc_ObjFanin(pObj, k);
+                    Abc_Obj_t * pFanin = Abc_ObjFanin(pObj, k);
                     std::string faninName = std::string(FixName(Abc_ObjName(pFanin)).c_str());
                     if (isFirst) {
                         if (pCube[k] == '0') {
@@ -2592,7 +2592,7 @@ void NetMan::DumpCFile(std::string&& fileName) {
         fprintf(file, "%s", oss.str().c_str());
     }
     Abc_NtkForEachPo(pNtk, pObj, i) {
-        abc::Abc_Obj_t * pDriver = Abc_ObjFanin0(pObj);
+        Abc_Obj_t * pDriver = Abc_ObjFanin0(pObj);
         assert(Abc_ObjIsNode(pDriver));
         fprintf(file, "%s = ", FixName(Abc_ObjName(pObj)).c_str());
         fprintf(file, "%s;\n", FixName(Abc_ObjName(pDriver)).c_str());
